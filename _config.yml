@@ -23,7 +23,7 @@ baseurl : # does not include hostname
 title   : Bigbyto
 description: > # this means to ignore newlines until "Language & timezone"
   Bigbyto's blog
-
+permalink: none  
 
 ## => Language and Timezone
 ##############################
