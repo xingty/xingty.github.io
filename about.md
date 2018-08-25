@@ -4,53 +4,34 @@ titles:
   en: About
   zh: 关于
   zh-Hans: 关于
-  zh-Hant: 關於
 key: page-about
 ---
 
-![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.png)
+你好，我是Bigbyto，一个普通的程序员，欢迎你访问我的博客。
 
-TeXt is a customizable Jekyll theme for personal site, team site, blog, project, documentation, etc. Similar to iOS 11 style, it has large and prominent titles, round buttons and cards.
+既然点到这里了，说明你可能对俺有那么一点兴趣，就让我厚着脸皮自我介绍一下吧。
 
-```javascript
-(() => console.log('Hello, World!'))();
-```
+## 编程往事
+小时候对电脑感到很神奇，初中时阴差阳错获得了一台电脑，从那以后便一发不可收。记得那时上网搜各种盗QQ号的教程，上黑客网站学习如何使用灰鸽子......回想起来真是一段不错的回忆呢~
 
-## Features
+上高中时就开始找各种视频教程，当初学习了HTML，linux，TCP/ip，网络基础.....真的学了很多，不过就是学不会编程。可能是当时比较笨。不过高三暑假突然开窍，很神奇的学会了C语言
 
-- Responsive
-- Skins
-- Highlight Theme
-- Table of contents
-- Authors
-- Multi-language support(English, Simplified Chinese, Traditional Chinese)
-- Search
-- Semantic HTML
-- RSS（[jekyll-feed](https://github.com/jekyll/jekyll-feed))
-- Contact information (Email, Facebook, Twitter, Linkedin, Weibo, Zhihu, etc)
-- Mathematical formula ([MathJax](https://www.mathjax.org/))
-- Flowchart, Sequence diagram, Gantt diagram ([mermaid](https://mermaidjs.github.io/))
-- Line Chart, Bar Chart, Radar Chart, Pie Chart ([chartjs](http://www.chartjs.org/))
-- Page views ([LeanCloud](https://leancloud.cn/))
-- Comments ([Disqus](https://disqus.com/))
-- Google Analytics
+高考填志愿没被录取，进了一家和IT不搭边的学校。整个大学都在自学编程。从C、Java、Mysql、数据结构(虽然都忘得差不多了)、Java的SSH(struct2 spring hibernate)框架......
 
-## Skins
+迷茫、焦虑和不安笼罩着我整个大学生涯。
 
-You can choose these 6 built-in skins below:
+大学实习招了一份Android的工作，在深圳熬了1年后辗转来到广州继续做了一年。又开始焦虑了，觉得移动端没前途，闲暇时间学了一下Javascript。也使用AngularJS和Vue开发过一些html5的项目。也愣头青般的用React-Native开发过一个移动端App。
 
-| `default` | `dark` | `forest` |
-| --- |  --- | --- |
-| ![Default](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_default.png) | ![Dark](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_dark.png) | ![Forest](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_forest.png) |
+现在把重心放到了后端。感觉后端有着无穷的魅力呢，一旦出现大并发，许多简单的问题都要复杂化，打破各种数据库的范式。这是个很有趣的过程。
 
-| `ocean` | `chocolate` | `orange` |
-| --- |  --- | --- |
-| ![Ocean](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_ocean.png) | ![Chocolate](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_chocolate.png) | ![Orange](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/skins_orange.png) |
+## 为什么用独立博客
+为什么不用公众号、简书、知乎等而是用独立博客?
 
-### Highlight Theme
+这大概和我性格有关，在我初中时已经开始在网上写文章，当时的百度空间、网易博客，jimdo等第三方博客，都存在着各种局限(如限制html)，那时开始就在折腾各种免费空间装wordpress。被当时折腾的多了，就更向往自由多点。
 
-TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highlight theme.
+其次是现在已经掌握了一些编程知识，有能力去修修改改博客一些代码，这也是个非常有趣的过程。
 
-| `tomorrow` | `tomorrow-night` | `tomorrow-night-eighties` | `tomorrow-night-blue` | `tomorrow-night-bright` |
-| --- |  --- | --- | --- |  --- |
-| ![Tomorrow](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow.png) | ![Tomorrow Night](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night.png) | ![Tomorrow Night Eighties](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-eighties.png) | ![Tomorrow Night Blue](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-blue.png) | ![Tomorrow Night Bright](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/highlight_tomorrow-night-bright.png) |
+实际上更多的是我喜欢自由多点，在这里不用害怕说错话被别人挖出来，然后封掉你的号。
+
+## 最后
+感谢你看到最后~ 希望你能在我博客找到自己所需的东西。
