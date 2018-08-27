@@ -1,7 +1,7 @@
 {%- if page.key and
   site.comments.disqus.shortname -%}
 
-  <div id="disqus_thread"></div>
+  <!-- <div id="disqus_thread"></div>
   <script>
   /**
   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -17,6 +17,20 @@
     (d.head || d.body).appendChild(s);
   })();
   </script>
+   -->
+  <div id="comment"></div>
+  <script>
+    (function() {
+      var disq = new iDisqus('comment', {
+        forum: '{{ site.comments.disqus.shortname }}',
+        api: '{{site.comments.disqus.api}}',
+        site: '{{ site.comments.disqus.site }}',
+        identifier: '{{ page.key }}',
+        mode: 1,
+        timeout: 3000,
+        init: true
+      })
+    })();
+  </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 {%- endif -%}

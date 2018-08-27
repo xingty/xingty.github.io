@@ -45,6 +45,11 @@
 {%- assign _sources = __return -%}
 <link rel="stylesheet" href="{{ _sources.font_awesome }}" >
 
+{%- if site.comments.disqus.shortname -%}
+<link rel="stylesheet" href="/assets/css/disqus/iDisqus.min.css" >
+<script src="/assets/js/disqus/iDisqus.min.js"></script>
+{%- endif -%}
+
 <style>
 	textarea {
 		-webkit-appearance: none;

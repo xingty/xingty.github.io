@@ -106,11 +106,13 @@ sources: # bootcdn (default), unpkg
 ## => Comments
 ##############################
 comments:
-  provider: gitalk # false (default), "disqus", "gitalk", "custom"
+  provider: disqus # false (default), "disqus", "gitalk", "custom"
 
   ## Disqus
   disqus:
     shortname: bigbyto # the Disqus shortname for the site
+    api: http://comment.wiyi.org/disqus # the proxy url
+    site: https://wiyi.org # site for proxy
 
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
