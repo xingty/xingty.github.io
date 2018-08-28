@@ -35,6 +35,29 @@
   .page__content, .page__search-panel {
     margin: 0 auto;
     padding-bottom: map-get($layout, footer-height);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      // font-weight: map-get($base, font-weight-bold);
+      line-height: 40px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-weight: 300;
+    }
+
+    h2 {
+      font-weight: 250;
+    }
+
+    h3 {
+      font-weight: 200;
+    }
   }
 
   .article__header {
@@ -42,11 +65,13 @@
     header, h1 {
       display: inline;
     }
+
     .split-space {
       @include user-select(none);
     }
     .edit-on-github {
       text-decoration: none !important;
+      color: #fc4d50 !important;
     }
   }
 

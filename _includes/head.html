@@ -46,7 +46,7 @@
 {%- assign _sources = __return -%}
 <link rel="stylesheet" href="{{ _sources.font_awesome }}" >
 
-{%- if site.comments.disqus.shortname -%}
+{%- if site.comments.provider == 'disqus' -%}
 <link rel="stylesheet" href="/assets/css/disqus/iDisqus.min.css" >
 <script src="/assets/js/disqus/iDisqus.min.js"></script>
 {%- endif -%}

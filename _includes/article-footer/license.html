@@ -14,9 +14,11 @@
 
   {%-assign _license_name = '<a itemprop="license" rel="license" href="[URL]">[NAME]</a>' | replace: "[URL]", _license.url | replace: "[NAME]", _license.name -%}
   <div class="license">
+    <div>本文链接: <a href="{{site.url}}{{page.url}}">{{site.url}}{{page.url}}</a></div>
+
     <p>{{ _license_announce | replace: "[LICENSE]", _license_name }}
       <a rel="license" href="{{ _license.url }}">
-        <img alt="{{ _license.name }}" src="{{ _license.image }}" />
+        <!-- <img alt="{{ _license.name }}" src="{{ _license.image }}" /> -->
       </a>
     </p>
   </div>

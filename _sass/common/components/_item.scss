@@ -79,9 +79,9 @@ a.item__header {
 
 .items--divided {
   .item {
-    &:not(:first-child) {
-      padding-top: map-get($spacers, 4);
-    }
+    // &:not(:first-child) {
+    //   padding-top: map-get($spacers, 4);
+    // }
     &:not(:last-child) {
       padding-bottom: map-get($spacers, 4);
       @include split-line(bottom);

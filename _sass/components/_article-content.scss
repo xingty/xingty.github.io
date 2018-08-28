@@ -200,4 +200,8 @@
       font-weight: map-get($base, font-weight-bold);
     }
   }
+
+  a {
+    margin: 0px 2px;
+  }
 }

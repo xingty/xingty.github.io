@@ -17,7 +17,7 @@ $base: (
   font-size-h5-lg:        1.25rem,
   font-size-h6-lg:        1.25rem,
 
-  font-size-h1:           2.5rem,
+  font-size-h1:           2.0rem,
   font-size-h2:           1.9rem,
   font-size-h3:           1.5rem,
   font-size-h4:           1.2rem,
@@ -112,7 +112,7 @@ $button: (
   circle-diameter-lg:     $button-height-lg,
   circle-diameter:        $button-height,
   circle-diameter-sm:     $button-height-sm,
-  font-weight:            map-get($base, font-weight-bold),
+  font-weight:            map-get($base, font-weight),
 
   transition:             all .2s ease-in-out
 );

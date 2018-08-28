@@ -57,15 +57,16 @@ input, textarea, select, button {
   color: $text-color;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong {
-  font-weight: map-get($base, font-weight-bold);
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   // font-weight: map-get($base, font-weight-bold);
+//   line-height: 40px;
+//   margin-top: 15px;
+// }
 
 h1 {
   font-size: map-get($base, font-size-h1);
@@ -86,6 +87,7 @@ h2 {
 h3 {
   font-size: map-get($base, font-size-h3);
   color: $text-color-d;
+  font-weight: 200;
   @include media-breakpoint-down(md) {
     font-size: map-get($base, font-size-h3-sm);
   }
@@ -116,7 +118,6 @@ h6 {
 }
 
 a {
-  font-weight: map-get($base, font-weight-bold);
   @include plain() {
     text-decoration: none;
   }
