@@ -10,7 +10,7 @@ tags: dns 微信公众号
 <!--more-->
 
 ## Dnsmasq
-Dnsmasq是一个简单的DNS缓存服务器，可用作DNS解析，同时也支持DHCP。如果你玩过Dncrypt，相信你也肯定用过Dnsmasq。
+Dnsmasq是一个简单的DNS缓存服务器，可用作DNS解析，同时也支持DHCP。如果你玩过Dnscrypt，相信你也肯定用过Dnsmasq。
 
 我们可以利用Dnsmasq把域名解析到本地，从而突破微信的限制在本地调试微信的js接口。
 
@@ -41,4 +41,4 @@ vim /usr/local/etc/dnsmasq
 <br>
 <img src="/assets/images/dnsmasq/dns-weixin.jpg" width="270"/>
 
-本位只是提供一种思路，Dnsmasq的作用不仅于此，更多的要靠大家自己去探索了。同样的思路，在windows和linux下只要找到能DNS服务器的软件即可。当然，如果能修改手机的hosts，直接修改是最省事的。不过限制修改手机hosts比以前麻烦太多了，即便你懂修改，公司的其他人不一定懂。搭建一个DNS服务相对比较省事~
+本文只是提供一种思路，Dnsmasq的作用不仅于此，更多的要靠大家自己去探索了。同样的思路，在windows和linux下只要找到能DNS服务器的软件即可。当然，如果能修改手机的hosts，直接修改是最省事的。不过修改手机hosts比以前麻烦太多了，即便你懂修改，公司的其他人不一定懂。搭建一个DNS服务相对比较省事~
