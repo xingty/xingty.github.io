@@ -10,19 +10,22 @@ tags: dns 微信公众号
 <!--more-->
 
 ## Dnsmasq
+
 Dnsmasq是一个简单的DNS缓存服务器，可用作DNS解析，同时也支持DHCP。如果你玩过Dnscrypt，相信你也肯定用过Dnsmasq。
 
 我们可以利用Dnsmasq把域名解析到本地，从而突破微信的限制在本地调试微信的js接口。
 
 ### 安装
+
 Mac下可以直接通过homebrew安装
 
-```shell
+``` shell
 brew install dnsmasq
 ```
 
 就是这么简单，修改一下配置文件
-```shell
+
+``` shell
 vim /usr/local/etc/dnsmasq
 ```
 

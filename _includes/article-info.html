@@ -11,7 +11,6 @@
 
 
 <div class="article__info clearfix">
-
   {%- if _author -%}
     <meta itemprop="author" content="{{ _author.name }}"/>
   {%- endif -%}
@@ -38,7 +37,7 @@
 
   {%- if include.article.author or include.article.date or _pageview or post -%}
     <ul class="right-col menu">
-      {%- if include.article.author -%}
+      {%- if _author.name -%}
         <li><i class="fas fa-user"></i> <span>{{ _author.name }}</span></li>
       {%- endif -%}
 

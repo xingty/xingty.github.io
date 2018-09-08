@@ -12,12 +12,13 @@ Mysql5.7后对GIS添加了很多支持，如innodb和geohash等等特性。最�
 <!--more-->
 
 ## Osmosis
+
 下载的OSM本身就是XML格式的数据，不过通常来说OSM都非常庞大，我下载了中国的解压出来有9+GB，要处理这么大的文件很麻烦，还要缕清各种关系。Osmosis是官网提供的一个工具，用于操作OSM文件。具体介绍和下载地址[戳我](https://wiki.openstreetmap.org/wiki/Osmosis)
 
 如果你用的是Mac系统，也可以直接通过homebrew安装
 
 ``` shell
-$ brew install osmosis
+brew install osmosis
 ```
 
 ## 导入数据表
@@ -25,21 +26,22 @@ $ brew install osmosis
 [点我下载数据库](/assets/files/osm.sql)导进你自己的数据库，过程我简单用命令描述了:)
 
 ```shell
-$ mysql -u root -p
-$ use osm;
-$ source /tmp/osm.sql;
-$ exit;
+mysql -u root -p
+use osm;
+source /tmp/osm.sql;
+exit;
 ```
 
 如无意外成功创建数据表，接下来就可以用osmosis导入啦，执行下面命令
 
 ```shell
-$ osmosis --read-xml enableDateParsing=no file="YOUR_OSM_IMPORT_FILE" --buffer --write-apidb dbType="mysql" host="YOUR_HOSTNAME" database="YOUR_DATABASE_NAME" user="YOUR_USERNAME" password="YOUR_PASSWORD" validateSchemaVersion=no
+osmosis --read-xml enableDateParsing=no file="YOUR_OSM_IMPORT_FILE" --buffer --write-apidb dbType="mysql" host="YOUR_HOSTNAME" database="YOUR_DATABASE_NAME" user="YOUR_USERNAME" password="YOUR_PASSWORD" validateSchemaVersion=no
 ```
 
 请耐心等待，我导入9G的数据到虚拟机的Mysql，用了2个小时。血淋淋的教训，最好是导到本机的Mysql。
 
 ## 最后
+
 给大家看看在34w条数据查询距离的耗时
 
 ```sql
@@ -96,5 +98,6 @@ ORDER BY distance;
 
 
 ## 参考资料
+
 https://forum.openstreetmap.org/viewtopic.php?id=9870   
 https://wiki.openstreetmap.org/wiki/Osmosis
