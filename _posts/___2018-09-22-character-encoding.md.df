@@ -1,0 +1,96 @@
+---
+title: Unicode、UTF-8 和 UTF16的区别
+key: charactor-encoding
+permalink: charactor-encoding.html
+tags: unicode utf8 utf16
+---
+
+## 字符编码
+
+在互联网蛮荒的时代，流行的是Ascii编码。这种编码方式只能容纳127个字符，对于显示英语足够了。不过随着互联网飞速发展，ASCII显然无法满足其他国家的需求，期间出现了很多编码方式，比如GBK ISO 8859……直到Unicode面世，几乎统一了互联网的编码……
+
+### 码元(Code Unit)
+
+想知道UTF-8、UTF-16、UTF32中的8、16、32这乱七八糟的指的是啥，还得了解一下码元。
+
+> 码元（Code Unit，也称“代码单元”）是指一个已编码的文本中具有最短的比特组合的单元。对于UTF-8来说，码元是8bit；对于UTF-16来说，码元是16bit；对于UTF-32来说，码元是32bit。
+
+简单说，8、16、32指的是编码一个字符所需的最少单元。UTF-8最少1个字节，UTF-16是2个字节。后面的内容会叙述两者具体的编码方式。
+
+ASCII 是用一个字节对字符编码，是一种定长的编码方式，最多能容纳0b11111111(256)个字符
+
+## Unicode
+
+Unicode是一个字符集，它规范了编码到字符之间的映射。比如哈对应的Unicode值为\u54c8。看可以把Unicode看作是一本巨大的字典，它规范了字符的映射。
+
+ASCII只用1字节，仅仅能显示英文和其他的一些字符，远远达不到国际通用的标准。Unicode问世就是为了 统一所有字符编码。Unicode的编码空间从U+0000到U+10FFFF，共有1,112,064个码位。
+
+### Planes
+
+如果说ASCII是一本英文字典的话，Unicode 可以看作一本超级巨大的字典。
+前面提到了Unicode共有1,112,064个码位，为了方便理解和使用，Unicode标准又把他们分为17(0-16)个平面(Planes)，每个平面可可容纳65535个字符
+
+| 平面       | 始末字符值           |  中文名称      | 英文名称  |
+|-----------|--------------------|---------------|----------|
+| 0号平面    | U+0000 - U+FFFF    |  基本多文种平面    | Basic Multilingual Plane(BMP)  |
+| 1号平面    | U+10000 - U+1FFFF  |  多文种补充平面    | Supplementary Multilingual Plane(SMP)  |
+| 2号平面    | U+20000 - U+2FFFF  |  表意文字补充平面  | Supplementary Ideographic Plane(SIP)  |
+| 3号平面    | U+30000 - U+3FFFF  |  表意文字第三平面  | Tertiary Ideographic Plane(TIP)  |
+| 4-13号平面 | U+40000 - U+DFFFF  |  （尚未使用）     |   |
+| 14号平面   | U+E0000 - U+EFFFF  |  特别用途补充平面  | Supplementary Special-purpose Plane  |
+| 15号平面   | U+F0000 - U+FFFFF  |  保留作为私人使用  | Private Use Area-A，简称PUA-A  |
+| 16号平面   | U+100000 - U+10FFFF|  保留作为私人使用区 | Private Use Area-B，简称PUA-B  |
+
+第0号平面称为**基本多文种平面（BMP）**,包含了现在大多数国家的语言和一些字符。值得一提的是，0号平面(U+0000 - U+FFFF)的D800-DFFF是保留的，不对应任何的字符。UTF-16会利用这个做变长的编码，这个稍后会谈到。想知道各个平面编码了哪些内容，可以[点我查看](https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84)
+
+
+| D800-DBFF | UTF-16的高半区 | High-half zone of UTF-16 |
+| DC00-DFFF | UTF-16的低半区 | Low-half zone of UTF-16  |
+
+## Unicode和UTF-8、UTF-16
+
+上面说到，Unicode只是一个字符集，规定了字符的二进制编码，并没有规定这些字符是如何存储的。UTF-16和UTF-8是Unicode的实现，规范了字符的存储方式。
+
+## UTF-16
+UTF-16是Unicode的一个实现，有一套存储Unicode字符的规范。UTF-16最少需要2
+
+### 编码方式
+UTF-16是一种**变长**的编码方式，上面提到它的Code Unit是16bit，如果字符超过16bit，UTF-16会使用32bit来存储字符。
+
+#### 0号平面编码方式
+Unicode大部分常用字符都在这个平面，UTF-16直接存储Unicode，如果不满16bit，则在前面补0。请看下图
+
+![utf16 encoding](/assets/images/unicode/utf16_encoding.png)
+
+> I am 君山
+
+君山的Unicode编码分别为:
+
+>君 = 541b  
+山 = 5c71
+
+有个比较大的问题是，即使是英文字符，UTF-16也会使用2个字节存储
+
+#### 0x10000 - 0x10FFFF
+当Unicode 超过0xffff 编码会变得麻烦一些，2字节无法容纳
+
+### UTF-16和UCS-2
+UCS-2使用2个定长的字节表示一个字符，如果字符在0号平面上，那么UTF-16和USC-2是完全等价的。不同的是，UTF-16是变长的，就像上面叙述的一样，当字符超过了U+FFFF，UTF-16会使用4个字节来表示，USC-2就无能为力了。
+
+### 优缺点
+**优点**
+1. 解析速度快(因为编码相对简单)
+2. 处理中文，所占空间更小
+
+**缺点**
+1. 不兼容ASCII
+2. 存储大量英文浪费存储空间
+
+## UTF-8
+UTF-8也是一种可变长度的字符编码方式，最少只占用1个字节，且兼容ASCII，是现在最主流的编码方式。
+
+## 参考资料
+[Plane_(Unicode)](https://en.wikipedia.org/wiki/Plane_(Unicode))   
+[Unicode字符平面映射](https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84)   
+[UTF-16](https://zh.wikipedia.org/wiki/UTF-16)   
+[UTF-8](https://zh.wikipedia.org/wiki/UTF-8)   
