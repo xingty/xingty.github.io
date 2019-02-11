@@ -18,9 +18,10 @@ location / {
 }
 ```
 
-* auth_basic 认证开关，默认是off(即关闭认证)。出了off以外的都是启用auth。
+* auth_basic 认证开关，默认是off(即关闭认证)。除了off以外的都是启用auth。
 * auth_basic_user_file  账户密码文件，可以通过htpasswd生成。
 <!--more-->
+
 **htpasswd**
 
 htpasswd可以用于生成用户信息
@@ -40,7 +41,7 @@ htpasswd -c -m htpasswd.conf bigbyto
 
 **访问限制**
 
-问了防止暴力破解，我们可以用nginx的**ngx_http_limit_req_module**模块进行访问限制
+为了防止暴力破解，我们可以用nginx的**ngx_http_limit_req_module**模块进行访问限制
 
 ```nginx
 limit_req_zone $binary_remote_addr zone=limiter:10m rate=20r/s;
@@ -57,8 +58,6 @@ server {
 上面表示同一ip地址1秒最多只能访问20次，超过限制会立即返回错误。详细配置可以参考[ngx_http_limit_req_module](https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html)。
 
 
-
-参考链接:
-
+参考链接:  
 [https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html](https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html)
 [https://nginx.org/en/docs/http/ngx_http_limit_req_module.html](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)
