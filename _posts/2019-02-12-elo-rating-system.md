@@ -8,10 +8,10 @@ elo原本是一套用于国际象棋的评分系统。在游戏领域，普遍�
 
 ### elo算法
 
-![elo_ea_impl](https://wikimedia.org/api/rest_v1/media/math/render/svg/51346e1c65f857c0025647173ae48ddac904adcb)
+![elo_ea_impl](/assets/images/elo/elo-ea.svg)
 
 
-![elo_eb_impl](https://wikimedia.org/api/rest_v1/media/math/render/svg/4b340e7d15e61ee7d90f428dcf7f4b3c049d89ff)
+![elo_eb_impl](/assets/images/elo/elo-eb.svg)
 
 上面是对弈双方胜率的计算公示，其中
 

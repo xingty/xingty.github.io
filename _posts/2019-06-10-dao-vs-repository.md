@@ -2,7 +2,7 @@
 title: DAO还是Repository,傻傻的分不清?
 key: DAO-VS-Repository
 permalink: dao-vs-repository.html
-tags: DDD
+tags: DDD Java
 ---
 
 # DAO vs Repository
