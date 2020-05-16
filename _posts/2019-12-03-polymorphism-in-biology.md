@@ -1,7 +1,7 @@
 ---
 title: 从生物学角度看面向对象编程的多态
-key: in-biology-polymorphism
-permalink: in-biology-polymorphism.html
+key: polymorphism-in-biology
+permalink: polymorphism-in-biology.html
 tags: Java OOP
 ---
 
