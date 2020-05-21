@@ -7,7 +7,7 @@ tags: Java OOP
 
 ### Subtyping
 
-要想了解变异先要理解Subtyping的概念。Subtyping是面向对象里"类型多态"的其中一种表现形式，它主要描述"is a"这样的关系。比如`S`是`T`的子类型，那么他们的关系可以表达为 **S is a subtype of T**。维基百科有一段对Subtyping的描述。
+要想了解变异先要理解Subtyping的概念。Subtyping是面向对象里"类型多态(Type Polymorphism)"的其中一种表现形式，它主要描述"is a"这样的关系。比如`S`是`T`的子类型，那么他们的关系可以表达为 **S is a subtype of T**。维基百科有一段对Subtyping的描述。
 
 > In programming language theory, subtyping (also subtype polymorphism or inclusion polymorphism) is a form of type polymorphism in which a subtype is a datatype that is related to another datatype (the supertype) by some notion of substitutability.
 >
