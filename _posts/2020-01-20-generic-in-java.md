@@ -5,7 +5,7 @@ permalink: generic-in-java.html
 tags: Java OOP
 ---
 
-泛型有几个专业术语: Generic Type、Parameterized Type、Type Parameter、Type Arguments。这几个东西我也不知道怎么翻译，直接照搬外网的解释了。不想翻译内容，就当个人笔记~
+泛型有几个专业术语: Generic Type、Parameterized Type、Type Parameter、Type Arguments。这几个东西我也不知道怎么翻译，直接照搬外网的解释了。不想翻译内容，就当个人笔记。文章内容全部来自，这里有很多泛型的解释，[GenericsFAQ](http://www.angelikalanger.com/GenericsFAQ) 强推一波。
 
 ### Generic type
 
@@ -73,9 +73,6 @@ class Test {
 
 In the example we see a generic class `Box` with one formal type parameter `T.` This formal type parameter is replaced by actual type argument `String` , when the `Box` type is used in the test program. 
 
-
-
-文章内容全部来自，这里有很多泛型的解释，强推一波。[GenericsFAQ](http://www.angelikalanger.com/GenericsFAQ) 
 
 
 
