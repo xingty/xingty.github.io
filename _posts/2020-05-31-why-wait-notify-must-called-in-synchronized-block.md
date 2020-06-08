@@ -2,7 +2,7 @@
 title: Java调用wait()和notify()必须获得锁的原因
 key: why-wait-notify-must-called-in-synchronized-block
 permalink: why-wait-notify-must-called-in-synchronized-block.html
-tags: Java Thread
+tags: Java Concurrent
 ---
 
 今天看到个很有意思的问题，《为什么使用 notify 和 notifyAll 的时候要先获得锁》？
