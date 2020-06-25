@@ -2,7 +2,7 @@
 title: Java泛型几个常见的术语
 key: generic-in-java
 permalink: generic-in-java.html
-tags: Java OOP
+tags: Java OOP Generic
 ---
 
 泛型有几个专业术语: Generic Type、Parameterized Type、Type Parameter、Type Arguments。这几个东西我也不知道怎么翻译，直接照搬外网的解释了。不想翻译内容，就当个人笔记。文章内容全部来自，这里有很多泛型的解释，[GenericsFAQ](http://www.angelikalanger.com/GenericsFAQ) 强推一波。

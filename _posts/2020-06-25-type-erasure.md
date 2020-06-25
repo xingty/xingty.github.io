@@ -44,7 +44,7 @@ public interface CrudRepository<E> {
 ```java
 //javap -v CrudRepository
 {
-  public abstract E findAll();
+  public abstract E find();
     descriptor: ()Ljava/lang/Object;
     flags: ACC_PUBLIC, ACC_ABSTRACT
     Signature: #6                           // ()TE;
