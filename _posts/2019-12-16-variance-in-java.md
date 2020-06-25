@@ -2,7 +2,7 @@
 title: 谈谈Java的变异(不变 协变 逆变)
 key: variance-in-java
 permalink: variance-in-java.html
-tags: Java OOP
+tags: Java OOP Generic
 ---
 
 ### Subtyping
