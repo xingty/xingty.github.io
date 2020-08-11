@@ -17,7 +17,7 @@
 {%- endif -%}
 
   {%- for _article in _sorted_list -%}
-
+    {% if _article.visible == nil or _article.visible == 1 %}    
     {%- include snippets/prepend-baseurl.html path=_article.url -%}
     {%- assign _href = __return -%}
 
@@ -68,6 +68,7 @@
         <div class="item__content"><span class="item__meta">{{ _article.date | date: __return }}</span><a itemprop="headline" class="item__header" href="{{ _href }}">{{ _article.title }}</a></div>
       </li>
     {%- endif -%}
-
+    
+    {%- endif -%}
   {%- endfor -%}
 </div>
