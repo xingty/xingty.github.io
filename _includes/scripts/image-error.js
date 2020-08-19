@@ -1,6 +1,5 @@
 function onReady(callback) {
   let readyState = document.readyState;
-  console.log('state:' + readyState);
   if (readyState === 'interactive' || readyState === 'complete') {
     callback();
     return;
