@@ -9,18 +9,18 @@ tags: Java Spring
 
 ### Bean创建流程
 
-![spring-iiap-class](/assets/images/bean/spring-iiap-class.png)
+![/assets/images/bean/spring-iiap-class.png](https://user-images.githubusercontent.com/3600657/90591703-574c5680-e216-11ea-86e6-55e558e7938e.png)
 
 上面展示了`InstantiationAwareBeanPostProcessor`3个主要的方法，它们都会在Bean的创建周期中被回调，用以实现拦截或其他的自定义处理。前三个方法分别是实例化之前阶段、实例化后阶段、赋值阶段。因为第四个已经被废弃，这里也不在赘述。
 
 上面提到的三个方法，其实正好是对应了Spring Bean创建周期，对于一个普通的Spring Bean，当它被请求创建时，会经历下面的流程
 
-![bean-creation](/assets/images/bean/bean-creation.jpg)
+![/assets/images/bean/bean-creation.jpg](https://user-images.githubusercontent.com/3600657/90591690-5287a280-e216-11ea-8ba1-cf7ed4dc1105.jpg)
 <!--more-->
 
 对于`InstantiationAwareBeanPostProcessor`而言，它的每个方法都会在Bean的创建周期被回调，我大概画了一下图
 
-![instantation](/assets/images/bean/instantation.jpg)
+![/assets/images/bean/instantation.jpg](https://user-images.githubusercontent.com/3600657/90591692-53b8cf80-e216-11ea-9962-8e24a59be8df.jpg)
 
 
 ### 源码分析
@@ -149,18 +149,18 @@ protected Object applyBeanPostProcessorsBeforeInstantiation(Class<?> beanClass, 
 
 上一步如果没被拦截，那么会进入doCreateBean方法，正式开始Bean的创建流程，首先第一步会调用createBeanInstance创建一个bean的实例。
 
-![spring-create-instance](/assets/images/bean/spring-create-instance.png)
+![/assets/images/bean/spring-create-instance.png](https://user-images.githubusercontent.com/3600657/90591702-56b3c000-e216-11ea-83ab-b1253ad11fe9.png)
 
 
 #### Populate
 
 当bean实例完成创建时，此时需要对bean进行赋值。
 
-![populate-1](/assets/images/bean/populate-1.png)
+![/assets/images/bean/populate-1.png](https://user-images.githubusercontent.com/3600657/90591694-54516600-e216-11ea-9134-6661eda03942.png)
 
 我们跟进populateBean方法，就能发现在这里会调用InstantiationAwareBeanPostProcessor的postProcessProperties方法。这里是重点，因为Bean的依赖注入是在这里完成的。
 
-![spring-bean-post-process](/assets/images/bean/spring-bean-post-process.png)
+ ![/assets/images/bean/spring-bean-post-process.png](https://user-images.githubusercontent.com/3600657/90591698-55829300-e216-11ea-9086-438f045cb9c1.png)
 
 在这里可以看到我们`InstantiationAwareBeanPostProcessor`有一个实现类是`AutowiredAnnotationBeanPostProcessor`，打开查看它的`postProcessProperties`方法，就会在那里发现依赖注入的流程。
 
@@ -244,5 +244,5 @@ public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry, Environmen
 
 留意上面的`AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry)`，就是在这里进行了大量的注册。
 
-![spring-annotation-utils](/assets/images/bean/spring-annotation-utils.png)
+![/assets/images/bean/spring-annotation-utils.png](https://user-images.githubusercontent.com/3600657/90591696-54e9fc80-e216-11ea-80bc-261dd056c7c0.png)
 
