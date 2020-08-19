@@ -29,13 +29,11 @@ function isValidImage(img) {
 }
 
 function registerEvent(imgTag) {
-  imgTag.onerror = onImageLoadErr;
-}
-
-function onImageLoadErr(event) {
-  let imgTag = event.target;
-  let imgsrc = getImageSrc(imgTag.alt);
-  imgTag.src = imgsrc;
+  imgTag.onerror = event => {
+    let imgTag = event.target;
+    let imgsrc = getImageSrc(imgTag.alt);
+    imgTag.src = imgsrc;
+  };
 }
 
 function getImageSrc(alt) {
