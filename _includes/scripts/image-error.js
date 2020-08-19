@@ -9,16 +9,17 @@ function onReady(callback) {
 }
 
 function findImages() {
-  let articleContent = document.querySelector('.article__content');
-  if (!articleContent) { return; }
+  let contents = document.getElementsByClassName('article__content');
+  if (!contents || contents.length <= 0) { return; }
+  contents = Array.from(contents).forEach(articleContent => {
+    let images = articleContent.getElementsByTagName('img');
+    if (images && images.length && images.length <= 0) {
+      return;
+    }
 
-  let images = articleContent.getElementsByTagName('img');
-  if (images && images.length && images.length <= 0) {
-    return;
-  }
-
-  images = Array.from(images).filter(img => isValidImage(img));
-  images.forEach(img => registerEvent(img));
+    images = Array.from(images).filter(img => isValidImage(img));
+    images.forEach(img => registerEvent(img));
+    })
 }
 
 function isValidImage(img) {
