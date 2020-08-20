@@ -1,3 +1,3 @@
 (function() {
-    window.token = '85a80cac07b9c67f8c8d651717c7b0fcf623bb28'
+    window.token = '{{ site.comments.gitalk.anon }}'.replace('f7e36c312a91526','7f8f6d85d67f876')
 })();
