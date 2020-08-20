@@ -121,6 +121,7 @@ comments:
     repository  : xingty.github.io # GitHub repo
     owner       : xingty # GitHub repo owner
     admin: xingty # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
+    anon: 5cfc86deaf331228e52631ed435ee7f6ff3bcded
       # - your GitHub Id
 
 
