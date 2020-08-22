@@ -121,8 +121,9 @@ comments:
     repository  : xingty.github.io # GitHub repo
     owner       : xingty # GitHub repo owner
     admin: xingty # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
-    anon: 5166b602d58145b41d8be1cfef7e36c312a91526
       # - your GitHub Id
+    enableAnonymouslyComment: true
+    anonymousApi: https://gitalk-anonmously-comment.vercel.app/api/comment
 
 
 ## => Pageview

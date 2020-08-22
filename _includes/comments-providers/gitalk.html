@@ -23,7 +23,11 @@
 				repo: '{{ site.comments.gitalk.repository }}',
 				owner: '{{ site.comments.gitalk.owner }}',
 				admin: [{{ _admin }}],
-				id: '{{ page.key }}'
+				id: '{{ page.key }}',
+				anonymous: {
+					enable: {{ site.comments.gitalk.enableAnonymouslyComment }},
+					api: '{{ site.comments.gitalk.anonymousApi }}'
+				}
 			});
 			gitalk.render('js-gitalk-container');
 		});
