@@ -24,9 +24,10 @@
 				owner: '{{ site.comments.gitalk.owner }}',
 				admin: [{{ _admin }}],
 				id: '{{ page.key }}',
-				anonymous: {
-					enable: {{ site.comments.gitalk.enableAnonymouslyComment }},
-					api: '{{ site.comments.gitalk.anonymousApi }}'
+				perPage: 20,
+				server: {
+					oauth_api: '{{ site.comments.gitalk.oauthApi }}',
+					anonymous_api: '{{ site.comments.gitalk.anonymousApi }}'
 				}
 			});
 			gitalk.render('js-gitalk-container');

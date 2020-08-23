@@ -32,8 +32,10 @@ sources:
     leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js'
     chart: 'https://cdn.bootcss.com/Chart.js/2.7.1/Chart.bundle.min.js'
     gitalk:
-      js: 'https://gitalk-anonmously-comment.vercel.app/gitalk/gitalk.min.js'
-      css: 'https://gitalk-anonmously-comment.vercel.app/gitalk/gitalk.css'
+      # js: /assets/js/gitalk/gitalk.min.js
+      # css: /assets/js/gitalk/gitalk.css
+      js: 'https://github-api.wiyi.org/gitalk/gitalk.min.js'
+      css: 'https://github-api.wiyi.org/gitalk/gitalk.css'
     mathjax: 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'
     mermaid: 'https://cdn.bootcss.com/mermaid/7.1.2/mermaid.min.js'
   unpkg:
@@ -42,7 +44,9 @@ sources:
     leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js'
     chart: 'https://unpkg.com/chart.js@2.7.1/dist/Chart.min.js'
     gitalk:
-      js: 'https://gitalk-anonmously-comment.vercel.app/gitalk/gitalk.min.js'
-      css: 'https://gitalk-anonmously-comment.vercel.app/gitalk/gitalk.css'
+      # js: /assets/js/gitalk/gitalk.min.js
+      # css: /assets/js/gitalk/gitalk.css
+      js: 'https://github-api.wiyi.org/gitalk/gitalk.min.js'
+      css: 'https://github-api.wiyi.org/gitalk/gitalk.css'
     mathjax: 'https://unpkg.com/mathjax@2.7.3/unpacked/MathJax.js?config=TeX-MML-AM_CHTML'
     mermaid: 'https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'

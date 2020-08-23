@@ -117,13 +117,13 @@ comments:
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
     clientID    : 6db7d880f65d6a6191c6 # GitHub Application Client ID
-    clientSecret: 6e54f5aa99a2b9d81a45af53a047764f9150e452 # GitHub Application Client Secret
+    clientSecret: fdeaade4d90a94e7e795f5c23edc811f5febbbc8 # GitHub Application Client Secret
     repository  : xingty.github.io # GitHub repo
     owner       : xingty # GitHub repo owner
     admin: xingty # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
       # - your GitHub Id
-    enableAnonymouslyComment: true
     anonymousApi: https://gitalk-anonmously-comment.vercel.app/api/comment
+    oauthApi: https://github-api.wiyi.org/api/authorize
 
 
 ## => Pageview

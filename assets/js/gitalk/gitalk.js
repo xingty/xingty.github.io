@@ -6534,7 +6534,9 @@ var GitalkComponent = function (_Component) {
           },
           params: {
             per_page: perPage,
-            page: page
+            page: page,
+            sort: 'comments',
+            direction: _this.state.pagerDirection === 'last' ? 'asc' : 'desc'
           }
         }).then(function (res) {
           var _this$state = _this.state,
@@ -6766,9 +6768,9 @@ var GitalkComponent = function (_Component) {
     };
 
     _this.options = (0, _assign2.default)({}, {
-      anonymous: {
-        enable: false,
-        api: ''
+      server: {
+        oauth_api: '',
+        anonymous_api: ''
       },
       id: window.location.href,
       number: -1,
@@ -6780,7 +6782,7 @@ var GitalkComponent = function (_Component) {
       pagerDirection: 'last', // last or first
       createIssueManually: false,
       distractionFreeMode: false,
-      proxy: 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
+      proxy: 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token', //deprecated
       flipMoveOptions: {
         staggerDelayBy: 150,
         appearAnimation: 'accordionVertical',
@@ -6808,61 +6810,23 @@ var GitalkComponent = function (_Component) {
     }
 
     var query = (0, _util.queryParse)();
-    if (query.code) {
-      var code = query.code;
-      delete query.code;
+    if (query.access_token) {
+      _this.accessToken = query.access_token;
+      delete query.access_token;
       var replacedUrl = '' + window.location.origin + window.location.pathname + (0, _util.queryStringify)(query) + window.location.hash;
       history.replaceState(null, null, replacedUrl);
-      _this.options = (0, _assign2.default)({}, _this.options, {
-        url: replacedUrl,
-        id: replacedUrl
-      }, props.options);
-
-      _util.axiosJSON.post(_this.options.proxy, {
-        code: code,
-        client_id: _this.options.clientID,
-        client_secret: _this.options.clientSecret
-      }).then(function (res) {
-        if (res.data && res.data.access_token) {
-          _this.accessToken = res.data.access_token;
-
-          _this.getInit().then(function () {
-            return _this.setState({ isIniting: false });
-          }).catch(function (err) {
-            console.log('err:', err);
-            _this.setState({
-              isIniting: false,
-              isOccurError: true,
-              errorMsg: (0, _util.formatErrorMsg)(err)
-            });
-          });
-        } else {
-          // no access_token
-          console.log('res.data err:', res.data);
-          _this.setState({
-            isOccurError: true,
-            errorMsg: (0, _util.formatErrorMsg)(new Error('no access token'))
-          });
-        }
-      }).catch(function (err) {
-        console.log('err: ', err);
-        _this.setState({
-          isOccurError: true,
-          errorMsg: (0, _util.formatErrorMsg)(err)
-        });
-      });
-    } else {
-      _this.getInit().then(function () {
-        return _this.setState({ isIniting: false });
-      }).catch(function (err) {
-        console.log('err:', err);
-        _this.setState({
-          isIniting: false,
-          isOccurError: true,
-          errorMsg: (0, _util.formatErrorMsg)(err)
-        });
-      });
     }
+
+    _this.getInit().then(function () {
+      return _this.setState({ isIniting: false });
+    }).catch(function (err) {
+      console.log('err:', err);
+      _this.setState({
+        isIniting: false,
+        isOccurError: true,
+        errorMsg: (0, _util.formatErrorMsg)(err)
+      });
+    });
 
     _this.i18n = (0, _i18n2.default)(_this.options.language);
     return _this;
@@ -7096,7 +7060,7 @@ var GitalkComponent = function (_Component) {
     value: function submitAnonmouslyComment(postUrl, body) {
       //use urlencode to avoid preflight request
       var params = 'postUrl=' + encodeURIComponent(postUrl) + '&content=' + body;
-      var url = this.options.anonymous.api;
+      var url = this.options.server.anonymous_api;
       return _util.axiosGithub.post(url, params, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -7316,7 +7280,7 @@ var GitalkComponent = function (_Component) {
               text: isPreview ? this.i18n.t('edit') : this.i18n.t('preview')
               // isLoading={isPreviewing}
             }),
-            this.options.anonymous.enable && _react2.default.createElement(_button2.default, {
+            this.options.server.anonymous_api && _react2.default.createElement(_button2.default, {
               getRef: this.getRef,
               className: 'gt-btn-public',
               onMouseDown: this.handleAnonCommentCreate,
@@ -7345,28 +7309,24 @@ var GitalkComponent = function (_Component) {
           admin = _options6.admin;
 
       var totalComments = comments.concat([]);
-      if (pagerDirection === 'last' && this.accessToken) {
-        totalComments.reverse();
-      }
+      // if (pagerDirection === 'last' && this.accessToken) {
+      //   totalComments.reverse()
+      // }
       return _react2.default.createElement(
         'div',
         { className: 'gt-comments', key: 'comments' },
-        _react2.default.createElement(
-          _reactFlipMove2.default,
-          flipMoveOptions,
-          totalComments.map(function (c) {
-            return _react2.default.createElement(_comment2.default, {
-              comment: c,
-              key: c.id,
-              user: user,
-              language: language,
-              commentedText: _this13.i18n.t('commented'),
-              admin: admin,
-              replyCallback: _this13.reply(c),
-              likeCallback: c.reactions && c.reactions.viewerHasReacted ? _this13.unLike.bind(_this13, c) : _this13.like.bind(_this13, c)
-            });
-          })
-        ),
+        totalComments.map(function (c) {
+          return _react2.default.createElement(_comment2.default, {
+            comment: c,
+            key: c.id,
+            user: user,
+            language: language,
+            commentedText: _this13.i18n.t('commented'),
+            admin: admin,
+            replyCallback: _this13.reply(c),
+            likeCallback: c.reactions && c.reactions.viewerHasReacted ? _this13.unLike.bind(_this13, c) : _this13.like.bind(_this13, c)
+          });
+        }),
         !totalComments.length && _react2.default.createElement(
           'p',
           { className: 'gt-comments-null' },
@@ -7497,13 +7457,9 @@ var GitalkComponent = function (_Component) {
   }, {
     key: 'loginLink',
     get: function get() {
-      var githubOauthUrl = 'https://github.com/login/oauth/authorize';
-      var clientID = this.options.clientID;
-
+      var githubOauthUrl = this.options.server.oauth_api;
       var query = {
-        client_id: clientID,
-        redirect_uri: window.location.href,
-        scope: 'public_repo'
+        origin: window.location.href
       };
       return githubOauthUrl + '?' + (0, _util.queryStringify)(query);
     }
