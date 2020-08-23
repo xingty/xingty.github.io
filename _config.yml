@@ -122,7 +122,7 @@ comments:
     owner       : xingty # GitHub repo owner
     admin: xingty # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
       # - your GitHub Id
-    anonymousApi: https://github-api.wiyi.or/api/comment
+    anonymousApi: https://github-api.wiyi.org/api/comment
     oauthApi: https://github-api.wiyi.org/api/authorize
 
 
