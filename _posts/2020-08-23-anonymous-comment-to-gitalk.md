@@ -77,4 +77,4 @@ var gitalk = new Gitalk({
 
 有兴趣的话可以去看一下我的改动，仓库地址是
 
-[https://github.com/xingty/gitalk](
+[https://github.com/xingty/gitalk](https://github.com/xingty/gitalk)
