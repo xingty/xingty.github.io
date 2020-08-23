@@ -3036,10 +3036,10 @@ var GitalkComponent = function (_Component) {
           headers: {
             Accept: 'application/vnd.github.v3.full+json'
           },
-          auth: {
-            username: clientID,
-            password: clientSecret
-          },
+          // auth: {
+          //   username: clientID,
+          //   password: clientSecret
+          // },
           params: {
             per_page: perPage,
             page: page,
@@ -3392,10 +3392,10 @@ var GitalkComponent = function (_Component) {
 
       return new _promise2.default(function (resolve, reject) {
         _util.axiosGithub.get(getUrl, {
-          auth: {
-            username: clientID,
-            password: clientSecret
-          },
+          // auth: {
+          //   username: clientID,
+          //   password: clientSecret
+          // },
           params: {
             t: Date.now()
           }
@@ -3431,10 +3431,10 @@ var GitalkComponent = function (_Component) {
       var url = '/repos/' + owner + '/' + repo + '/issues';
 
       return _util.axiosGithub.get(url, {
-        auth: {
-          username: clientID,
-          password: clientSecret
-        },
+        // auth: {
+        //   username: clientID,
+        //   password: clientSecret
+        // },
         params: {
           labels: labels.concat(id).join(','),
           t: Date.now()
