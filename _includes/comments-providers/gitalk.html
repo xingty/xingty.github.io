@@ -28,6 +28,9 @@
 				server: {
 					oauth_api: '{{ site.comments.gitalk.oauthApi }}',
 					anonymous_api: '{{ site.comments.gitalk.anonymousApi }}'
+				},
+				anonymous: {
+					accountName: 'bigboty-anon'
 				}
 			});
 			gitalk.render('js-gitalk-container');
