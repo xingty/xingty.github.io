@@ -34,8 +34,8 @@ sources:
     gitalk:
       # js: /assets/js/gitalk/gitalk.min.js
       # css: /assets/js/gitalk/gitalk.css
-      js: 'https://github-api.wiyi.org/gitalk/v1.6.3_202008250000/gitalk.min.js'
-      css: 'https://github-api.wiyi.org/gitalk/v1.6.3_202008250000/gitalk.css'
+      js: 'https://github-api.wiyi.org/gitalk/v1.6.4/gitalk.min.js'
+      css: 'https://github-api.wiyi.org/gitalk/v1.6.4/gitalk.css'
     mathjax: 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'
     mermaid: 'https://cdn.bootcss.com/mermaid/7.1.2/mermaid.min.js'
   unpkg:
@@ -46,7 +46,7 @@ sources:
     gitalk:
       # js: /assets/js/gitalk/gitalk.min.js
       # css: /assets/js/gitalk/gitalk.css
-      js: 'https://github-api.wiyi.org/gitalk/v1.6.3_202008250000/gitalk.min.js'
-      css: 'https://github-api.wiyi.org/gitalk/v1.6.3_202008250000/gitalk.css'
+      js: 'https://github-api.wiyi.org/gitalk/v1.6.4/gitalk.min.js'
+      css: 'https://github-api.wiyi.org/gitalk/v1.6.4/gitalk.css'
     mathjax: 'https://unpkg.com/mathjax@2.7.3/unpacked/MathJax.js?config=TeX-MML-AM_CHTML'
     mermaid: 'https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'

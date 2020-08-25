@@ -24,13 +24,27 @@
 				owner: '{{ site.comments.gitalk.owner }}',
 				admin: [{{ _admin }}],
 				id: '{{ page.key }}',
-				perPage: 20,
+				perPage: 35,
 				server: {
 					oauth_api: '{{ site.comments.gitalk.oauthApi }}',
 					anonymous_api: '{{ site.comments.gitalk.anonymousApi }}'
 				},
 				anonymous: {
 					accountName: 'bigbyto-anon'
+				},
+				cache: {
+					comments: {
+						enable: true,
+						ttl: 600
+					},
+					userInfo: {
+						enable: true,
+						ttl: 3600
+					},
+					issue: {
+						enable: true,
+						ttl: -1
+					}
 				}
 			});
 			gitalk.render('js-gitalk-container');

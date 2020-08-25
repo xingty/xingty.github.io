@@ -1030,6 +1030,24 @@
 .gt-container .gt-header-textarea:hover {
   background-color: #fbfbfb;
 }
+.gt-container .gt-header-anon-user-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 4.2em;
+  margin-bottom: 12px;
+}
+.gt-container .gt-header-anon-input {
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  outline: none;
+  border-radius: 3px;
+  min-width: 200px;
+  padding: 5px;
+}
 .gt-container .gt-header-preview {
   padding: 0.75em;
   border-radius: 5px;
