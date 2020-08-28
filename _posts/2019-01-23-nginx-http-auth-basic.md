@@ -37,7 +37,7 @@ htpasswd -c -m htpasswd.conf bigbyto
 
 把这个配置文件的目录填写到nginx的配置文件即可。
 
-![nginx_http_basic_auth_module](/assets/images/nginx/http_base_auth.png)
+![/assets/images/nginx/http_base_auth.png](https://user-images.githubusercontent.com/3600657/91549734-f4fffe00-e959-11ea-9d8d-127f14098873.png)
 
 **访问限制**
 

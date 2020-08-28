@@ -144,6 +144,4 @@ javap -v LambdaDemo.class
 0: invokedynamic #2, 0       // InvokeDynamic #0:run:()Ljava/lang/Runnable;
 ```
 
-可以看到上面两个在字节码上存在根本的区别，匿名类走的是一个类标准的创建流程，而字节码是直接用invokedynamic指令。
-
-由上面可以看到，Lambda表达式不仅在代码层面上简洁，字节码层面也更简洁。
+可以看到上面两个在字节码上存在根本的区别，匿名类走的是一个类标准的创建流程，而字节码是直接用invokedynamic指令。invokedynamic是比较特殊的指令，有空会专门写篇文章介绍这个指令。
