@@ -246,7 +246,7 @@ public class GenericDemo {
 
 Debug把断点设置到Type[] types = klass.getGenericInterfaces();，然后跟进去getGenericInfo看看。
 
-![class-signature](/assets/images/generic/class-signature.png)
+![/assets/images/generic/class-signature.png](https://user-images.githubusercontent.com/3600657/91568958-3bfcec00-e978-11ea-895d-fa2c8f880462.png)
 
 可以看到，这个签名和我们在字节码看到的class signature一模一样，这里会把signature decode为我们的所需要的类型信息。
 
