@@ -40,8 +40,8 @@ vim /usr/local/etc/dnsmasq
 
 最后在手机修改一下dns地址，访问weixin.com就会被指定到本地地址，从而绕过微信的限制。
 
-<img src="/assets/images/dnsmasq/ios_change_wifi_dns.png" alt="ios修改DNS" width="270"/>
-<br>
-<img src="/assets/images/dnsmasq/dns-weixin.jpg" width="270"/>
+![/assets/images/dnsmasq/ios_change_wifi_dns.png](https://user-images.githubusercontent.com/3600657/91657595-c23e3d00-eaf4-11ea-804e-c0ef90fd2c15.png)
+
+![/assets/images/dnsmasq/dns-weixin.jpg](https://user-images.githubusercontent.com/3600657/91657597-c5d1c400-eaf4-11ea-9069-bd3a370537f0.png)
 
 本文只是提供一种思路，Dnsmasq的作用不仅于此，更多的要靠大家自己去探索了。同样的思路，在windows和linux下只要找到能DNS服务器的软件即可。当然，如果能修改手机的hosts，直接修改是最省事的。不过修改手机hosts比以前麻烦太多了，即便你懂修改，公司的其他人不一定懂。搭建一个DNS服务相对比较省事~
