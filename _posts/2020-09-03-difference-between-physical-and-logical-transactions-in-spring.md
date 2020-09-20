@@ -1,7 +1,7 @@
 ---
 title: '深入理解Spring事务: 物理事务和逻辑事务'
-key: difference-between-physical-and-logical-transactions
-permalink: difference-between-physical-and-logical-transactions.html
+key: physical-and-logical-transactions
+permalink: physical-and-logical-transactions.html
 tags: Spring Transaction
 ---
 
