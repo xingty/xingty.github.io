@@ -41,7 +41,7 @@ tags: Java Spring
 
 如上图所示，在Spring Security的应用程序中，会存在2套FilterChain，分别是Servlet FilterChain和Spring SecurityFilterChain。事实上两者没有本质上的区别，甚至它们Filter的接口都是`javax.servlet`下的Filter。
 
-那么为什么要创造一套新的FilterChain有很多好处，最主要有下面两点:
+为什么要创造一套新的FilterChain呢？这样有很多好处，最主要有下面两点:
 
 1. 和Servlet Container解耦
 
