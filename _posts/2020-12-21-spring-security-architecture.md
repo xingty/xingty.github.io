@@ -169,6 +169,6 @@ Security Filters是Spring Security设计的Filter，它和ServletFilter没有本
 
 ### 总结
 
-通过本文的叙述相信你已经理解了Spring Security大概的工作流程和原理，它的本质就是一套拦截链，和Servlet中的FilterChain本质上是一样的。只不过Spring Security在设计上做了更多的考量，是的整体设计更加优雅。
+通过本文的叙述相信你已经理解了Spring Security大概的工作流程和原理，它的本质就是一套拦截链，和Servlet中的FilterChain本质上是一样的。只不过Spring Security在设计上做了更多的考量，使得整体设计更加优雅。
 
-在下一篇文章中，我将带大家理解Spring Security的认证(Authencation)流程，有兴趣的朋友敬请期待。
+在下一篇文章中，我将带大家理解[Spring Security认证(Authencation)流程](https://wiyi.org/spring-security-authentication.html)，有兴趣的朋友敬请期待。
