@@ -382,16 +382,12 @@ redis-cli -h 192.168.11.170 -p 16380
 
 **SENTINEL REPLICAS `<master name>`** (`>= 5.0`) Show a list of replicas for this master, and their state.
 
-显示制定master节点下的replicas节点和状态。
-
+显示制定master节点下的replicas节点和状态。   
 更多的API请参考redis官网[sentinel commands](https://redis.io/topics/sentinel#sentinel-commands)
-
-
 
 ### Sentinel自动发现机制(auto discovery)
 
-sentinel节点之间一直保持着互相通信的状态，这样做的目的一是为了监测对方是否处于可用状态; 二是节点之间需要交换彼此的信息(master slave等)。
-
+sentinel节点之间一直保持着互相通信的状态，这样做的目的一是为了监测对方是否处于可用状态; 二是节点之间需要交换彼此的信息(master slave等)。   
 就如同上面展示sentinel的log，我们不需要在每个sentinel节点配置其他sentinel的信息，他们会自动同步。sentinel通过redis的Pub/Sub功能来实现自动发现机制。
 
 * 每个sentinel节点，每隔2秒会像它监控的master、replica节点的`__sentinel__:hello`channel发送自己的信息。这些信息包括自己的ip，端口，以及自己监测的master信息。
@@ -424,21 +420,14 @@ Reading messages... (press Ctrl-C to quit)
 #.......
 ```
 
-
-
-### Sentinel 的缺点
-
+### Sentinel 的缺点   
 Sentinel方案虽然实现了failover，但依然无法解决下面的一些问题
 
-* 负载均衡
-
+* 负载均衡   
   当节点的存储量很大，且访问量很庞大，Sentinel无法做到数据和访问量的负载均衡
 
-* 容错率
-
+* 容错率   
   上面提到过3台服务器搭建sentinel是比较适合的数量，因为服务器数量继续增加，虽然能提高系统可靠性，不过却可以选择另一种更为强大的方案，即cluster。因此sentinel是种高不成低不就的方案。
-
-  
 
 当数据量和访问量都巨大时，可以尝试Redis官方的Cluster方案。往后有时间，会补上cluster方案的文章。
 
