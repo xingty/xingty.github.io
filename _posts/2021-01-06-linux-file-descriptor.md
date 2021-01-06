@@ -191,5 +191,5 @@ public class FDTester {
 [https://en.wikipedia.org/wiki/File_descriptor](https://en.wikipedia.org/wiki/File_descriptor)   
 [https://www.computerhope.com/jargon/f/file-descriptor.htm](https://www.computerhope.com/jargon/f/file-descriptor.htm)   
 [https://en.wikipedia.org/wiki/Open_(system_call)](https://en.wikipedia.org/wiki/Open_(system_call))   
-[https://en.wikipedia.org/wiki/Read_(system_call)](https://en.wikipedia.org/wiki/Read_(system_call))
+[https://en.wikipedia.org/wiki/Read_(system_call)](https://en.wikipedia.org/wiki/Read_(system_call))   
 [https://en.wikipedia.org/wiki/Write_(system_call)](https://en.wikipedia.org/wiki/Write_(system_call))  
