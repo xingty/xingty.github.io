@@ -13,12 +13,12 @@ file descriptor(以下简称fd)又叫文件描述符，他是一个抽象的指�
 
 现代操作系统会把内存划分为2个区域，分别为Use space(用户空间) 和 Kernel space(内核空间)。用户的程序在User space执行，系统内核在Kernel space中执行。
 
-用户的程序没有权限直接访问硬件资源，但系统内核可以。比如读写本地文件需要访问磁盘，创建socket需要网卡等。因此用户程序想要读写文件，必须要想内核发起读写请求，这个过程叫system call。
+用户的程序没有权限直接访问硬件资源，但系统内核可以。比如读写本地文件需要访问磁盘，创建socket需要网卡等。因此用户程序想要读写文件，必须要向内核发起读写请求，这个过程叫system call。
 
 内核收到用户程序system call时，负责访问硬件，并把结果返回给程序。
 
 ```java
-FileInputStream fis = new FileInputStream('/tmp/test.txt');
+FileInputStream fis = new FileInputStream("/tmp/test.txt");
 byte[] buf = new byte[256];
 fis.read(buf);
 ```
@@ -188,12 +188,8 @@ public class FDTester {
 
 ## 参考资料
 
-[https://en.wikipedia.org/wiki/File_descriptor](https://en.wikipedia.org/wiki/File_descriptor)
-
-[https://www.computerhope.com/jargon/f/file-descriptor.htm](https://www.computerhope.com/jargon/f/file-descriptor.htm)
-
-[https://en.wikipedia.org/wiki/Open_(system_call)](https://en.wikipedia.org/wiki/Open_(system_call))
-
+[https://en.wikipedia.org/wiki/File_descriptor](https://en.wikipedia.org/wiki/File_descriptor)   
+[https://www.computerhope.com/jargon/f/file-descriptor.htm](https://www.computerhope.com/jargon/f/file-descriptor.htm)   
+[https://en.wikipedia.org/wiki/Open_(system_call)](https://en.wikipedia.org/wiki/Open_(system_call))   
 [https://en.wikipedia.org/wiki/Read_(system_call)](https://en.wikipedia.org/wiki/Read_(system_call))
-
-[https://en.wikipedia.org/wiki/Write_(system_call)](https://en.wikipedia.org/wiki/Write_(system_call))
+[https://en.wikipedia.org/wiki/Write_(system_call)](https://en.wikipedia.org/wiki/Write_(system_call))  
