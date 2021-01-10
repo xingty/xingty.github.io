@@ -40,7 +40,7 @@ public static void main(String[] args) throws Exception{
 
 上面的代码是Java中典型的BIO，读取一个文件的内容，输出到另一个文件中。那么这个过程会发生那些事呢?请看下图
 
-![~replace~/assets/images/io-model/ioflow.png](https://user-images.githubusercontent.com/3600657/104124262-ccb5f080-538a-11eb-9401-141e528a9dd9.png)
+![~replace~/assets/images/io-model/ioflow.png](https://bigbyto.gitee.io//assets/images/io-model/ioflow.png)
 
 发生了什么呢?
 
@@ -75,7 +75,7 @@ Process --> systel call -->kernel --> hardware(hard disk)
 
 上面的阻塞并正常情况不会带来太大的资源浪费，因为Kernel从磁盘中读取数据这过程瞬间就能完成。但如果是网络I/O，情况就会变的不同，比如Socket。
 
-![~replace~/assets/images/io-model/bio.png](https://user-images.githubusercontent.com/3600657/104124260-cb84c380-538a-11eb-8b35-c2f1eb655b94.png)
+![~replace~/assets/images/io-model/bio.png](https://bigbyto.gitee.io//assets/images/io-model/bio.png)
 
 
 上图是blocking I/O发起system call `recvfrom()`时，进程将一直阻塞等待另一端Socket的数据到来。在这种I/O模型下，我们不得不为每一个Socket都分配一个线程，这会造成很大的资源浪费。
@@ -90,7 +90,7 @@ Blocking I/O优缺点都非常明显。优点是简单易用，对于本地I/O�
 
 如果数据就绪，就从kernel space复制到user space，操作数据; 如果还没就绪，kernel会**立即**返回`EWOULDBLOCK`这个错误。如下图
 
-![~replace~/assets/images/io-model/nio.png](https://user-images.githubusercontent.com/3600657/104124263-cd4e8700-538a-11eb-92da-1acb2fd4834c.png)
+![~replace~/assets/images/io-model/nio.png](https://bigbyto.gitee.io//assets/images/io-model/nio.png)
 
 可能细心的朋友会留意到，这里同样发起system call `recvfrom`，凭什么在blocking I/O会阻塞，而在这里kernel的数据还没就绪就直接返回``EWOULDBLOCK``呢？我们看看`recvfrom`函数定义:
 
@@ -113,7 +113,7 @@ I/O Multiplexing优化了非阻塞I/O大量发起system call的问题。
 
 上面介绍的I/O模型都是直接发起I/O操作，而I/O Multiplexing首先向kernel发起system call，传入file descriptor和感兴趣的事件(readable、writable等)让kernel监测，当其中一个或多个fd数据就绪，就会返回结果。程序再发起真正的I/O操作`recvfrom`读取数据。
 
-![~replace~/assets/images/io-model/io_select.png](https://user-images.githubusercontent.com/3600657/104124261-cc1d5a00-538a-11eb-81d9-74bf6893de86.png)
+![~replace~/assets/images/io-model/io_select.png](https://bigbyto.gitee.io//assets/images/io-model/io_select.png)
 
 在linux中，有3种system call可以让内核监测file descriptors，分别是select、poll、epoll。
 
@@ -231,7 +231,7 @@ epoll是一种性能很高的方案，是同步I/O性能最高的方案。现在
 
 ### Singal-Driven I/O
 
-![~replace~/assets/images/io-model/sio.png](https://user-images.githubusercontent.com/3600657/104124265-cde71d80-538a-11eb-9f34-f64b905efac6.png)
+![~replace~/assets/images/io-model/sio.png](https://bigbyto.gitee.io//assets/images/io-model/sio.png)
 
 这种信号驱动的I/O并不常见，从图片可以看到它第一次发起system call不会阻塞进程，kernel的数据就绪后会发送一个signal给进程。进程发起真正的IO操作。
 
@@ -239,7 +239,7 @@ epoll是一种性能很高的方案，是同步I/O性能最高的方案。现在
 
 ### Asynchronous I/O
 
-![~replace~/assets/images/io-model/ioflow.png](https://user-images.githubusercontent.com/3600657/104124259-ca539680-538a-11eb-9694-0bd4589209ba.png)
+![~replace~/assets/images/io-model/aio.png](https://bigbyto.gitee.io//assets/images/io-model/aio.png)
 
 异步I/O，即I/O操作不会引起进程阻塞。请看上图，发起aio_read请求后，kernel会直接返回。等数据就绪，发送一个signal到process处理数据。
 
