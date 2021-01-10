@@ -25,7 +25,7 @@ fis.read(buf);
 
 上面代码的流程如下图所示
 
-![/assets/images/fd/us_ks.png](https://user-images.githubusercontent.com/3600657/103748368-f8f60800-503e-11eb-867f-da5b9efcd08e.png)
+![/assets/images/fd/us_ks.png](/assets/images/fd/us_ks.png)
 
 <!--more-->
 
@@ -37,7 +37,7 @@ fis.read(buf);
 
 和fd相关的一共有3张表，分别是file descriptor、file table、inode table，如下图所示。
 
-![~replace~https://www.computerhope.com/jargon/f/file-descriptor.jpg](https://user-images.githubusercontent.com/3600657/103748658-67d36100-503f-11eb-960b-e77683e751f7.png)
+![~replace~https://user-images.githubusercontent.com/3600657/103748658-67d36100-503f-11eb-960b-e77683e751f7.png](https://www.computerhope.com/jargon/f/file-descriptor.jpg)
 
 * file descriptors
 
@@ -93,7 +93,7 @@ linux系统可以通过`/proc/pid/fd`文件夹查看进程的fd，比如我的re
 ls -l /proc/96104/fd
 ```
 
-![/assets/images/fd/linux_fd.png](https://user-images.githubusercontent.com/3600657/103748360-f693ae00-503e-11eb-8f5c-d3bcfbfeb630.png)
+![/assets/images/fd/linux_fd.png](/assets/images/fd/linux_fd.png)
 
 上图中的数字即fd。
 
@@ -103,7 +103,7 @@ ls -l /proc/96104/fd
 lsof -p pid
 ```
 
-![/assets/images/fd/mac_fd.png](https://user-images.githubusercontent.com/3600657/103748363-f72c4480-503e-11eb-8565-e405969997b6.png)
+![/assets/images/fd/mac_fd.png](/assets/images/fd/mac_fd.png)
 
 
 ## 操作file descriptors
@@ -177,13 +177,13 @@ public class FDTester {
 }
 ```
 
-![/assets/images/fd/fd_stdin.png](https://user-images.githubusercontent.com/3600657/103748354-f4c9ea80-503e-11eb-98f9-deac478ea4c2.png)
+![/assets/images/fd/fd_stdin.png](/assets/images/fd/fd_stdin.png)
 
-![/assets/images/fd/fd_stdout.png](https://user-images.githubusercontent.com/3600657/103748357-f5628100-503e-11eb-8b89-405d39df0cb4.png)
+![/assets/images/fd/fd_stdout.png](/assets/images/fd/fd_stdout.png)
 
-![/assets/images/fd/fd_stderr.png](https://user-images.githubusercontent.com/3600657/103748352-f4315400-503e-11eb-89f0-a87bb91be6b0.png)
+![/assets/images/fd/fd_stderr.png](/assets/images/fd/fd_stderr.png)
 
-![/assets/images/fd/fd_java_process.png](https://user-images.githubusercontent.com/3600657/103748344-f2679080-503e-11eb-9f25-d7c78a6696b5.png)
+![/assets/images/fd/fd_java_process.png](/assets/images/fd/fd_java_process.png)
 
 
 ## 参考资料
