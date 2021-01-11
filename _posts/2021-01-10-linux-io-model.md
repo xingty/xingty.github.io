@@ -144,7 +144,7 @@ select函数可以传入3个fd_set，分别对应了不同事件的file descript
 
 **缺点:**
 
-1. fd数量受限于fd_size，即默认的1024
+1. 每个fd_set的大小，受限于FD_SETSIZE(默认的1024)
 2. kernel返回后，需要轮询所有fd找出就绪的fd，随着fd数量增加，性能会逐渐下降
 
 更多的介绍请点击[select函数](http://www.masterraghu.com/subjects/np/introduction/unix_network_programming_v1.3/ch06lev1sec3.html)查看。
@@ -164,7 +164,7 @@ struct pollfd {
 };
 ```
 
-第一个参数fds是一个结构体数组，因此poll不会有大小限制。它优缺点跟select差不多。poll不受限fd_size的值，缺点是只有linux支持poll。
+第一个参数fds是一个结构体数组，因此poll不受限FD_SETSIZE的值。它优缺点跟select差不多。另外是只有linux支持poll。
 
 #### epoll
 
@@ -212,7 +212,7 @@ epoll_ctl用来操作epoll实例监听的fd，可以往epoll实例中新增、�
 * epdf: 即epoll_create1返回的fd
 * op是operation的缩写，可为EPOLL_CTL_ADD、EPOLL_CTL_MOD、EPOLL_CTL_DEL
 * fd即要监控的fd
-* event即要注册的时间集合(可读、可写之类的)
+* event即要注册的事件集合(可读、可写之类的)
 
 ##### epoll_wait
 
