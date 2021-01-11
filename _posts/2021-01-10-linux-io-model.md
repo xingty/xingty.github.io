@@ -300,6 +300,7 @@ POSIX对这两个术语定义如下:
 
 [I/O Models](http://www.masterraghu.com/subjects/np/introduction/unix_network_programming_v1.3/ch06lev1sec2.html)   
 [https://linux.die.net](https://linux.die.net)   
+[https://man7.org/](https://man7.org/)   
 [https://en.wikipedia.org/wiki/Epoll](https://en.wikipedia.org/wiki/Epoll)    
 [https://gist.github.com/MagnusTiberius/bf31eb8584452f8b12c637871ba517f0](https://gist.github.com/MagnusTiberius/bf31eb8584452f8b12c637871ba517f0)   
 [It’s all about buffers: zero-copy, mmap and Java NIO](https://shawn-xu.medium.com/its-all-about-buffers-zero-copy-mmap-and-java-nio-50f2a1bfc05c)   
