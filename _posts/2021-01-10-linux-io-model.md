@@ -22,6 +22,7 @@ tags: 操作系统
 1. 程序无法直接访问硬件资源，对磁盘(硬件)的读写需要发起system call，让kernel处理。
 2. 大部分和I/O有关的system call，都需要把fd(file descriptor)作为参数传递给kernel。
 <!--more-->
+
 ## 一次I/O操作经历了什么
 
 在正式开始之前，先对I/O流程有一个感性的认识。
@@ -274,7 +275,7 @@ struct aiocb {
 
 很多人会混淆两者的关系，很显然，不是！
 
-不管是select、poll、epoll都会导致进程阻塞。真正发起真正的IO操作时(比如recvfrom)，进程也会阻塞。
+不管是select、poll、epoll都会导致进程阻塞。发起真正的IO操作时(比如recvfrom)，进程也会阻塞。
 
 I/O Multiplexing优点在于一次性可以监控大量的file descriptors。这就是所谓的"多路复用"(我觉得这个是很坑爹的翻译，不知道哪里存在复用了呢?)。
 
