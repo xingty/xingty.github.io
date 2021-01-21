@@ -37,7 +37,7 @@ fis.read(buf);
 
 和fd相关的一共有3张表，分别是file descriptor、file table、inode table，如下图所示。
 
-![~replace~https://user-images.githubusercontent.com/3600657/103748658-67d36100-503f-11eb-960b-e77683e751f7.png](https://www.computerhope.com/jargon/f/file-descriptor.jpg)
+![~replace~https://user-images.githubusercontent.com/3600657/103748658-67d36100-503f-11eb-960b-e77683e751f7.png](https://bigbyto.gitee.io/assets/images/fd/file-descriptor.jpg)
 
 * file descriptors
 
