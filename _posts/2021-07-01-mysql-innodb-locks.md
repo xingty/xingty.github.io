@@ -1,5 +1,5 @@
 ---
-title: 'Mysql InnoDB引擎中的锁'
+title: '理解Mysql InnoDB引擎中的锁'
 key: mysql-innodb-locking
 permalink: mysql-innodb-locking.html
 tags: 数据库
