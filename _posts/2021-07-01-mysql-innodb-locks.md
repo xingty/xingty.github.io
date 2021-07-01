@@ -30,6 +30,7 @@ CREATE TABLE `user` (
 | 3    | 王五 | 22   | 13800138002 |
 | 4    | 赵六 | 26   | 13800138003 |
 | 5    | 孙七 | 30   | 13800138004 |
+
 <!--more-->
 
 ## 锁的分类
@@ -176,14 +177,14 @@ select * from user where id = 3 for update;
 当where字段满足唯一索引，主键其中之一时，mysql会使用Record lock给记录加锁。因为数据库约束数据唯一，不会出现幻读。如果字段是普通索引，情况会发生变化
 
 ```sql
-select * from user where age = 18 for update;
+select * from user where age = 22 for update;
 ```
 
-上面的sql会使用Gap lock，(x,18)之间的间隙会被锁定，其他事务无法往这个区间插入数据。
+上面的sql会使用Gap lock，(18,22)之间的间隙会被锁定，其他事务无法往这个区间插入数据。
 
 ### Next-Key Locks
 
-Next-Key Locks实际上就是Gap lock和Record Lock的组合。Gap lock中的索引间隙是一个左开右开的区间，在next-key lock中，变成左开右开，比如:
+Next-Key Locks实际上就是Gap lock和Record Lock的组合。Gap lock中的索引间隙是一个左开右开的区间，在next-key lock中，变成左开右闭，比如:
 
 > (-∞,18], (18,20], (20,22], (22,26], (26,30], (30,+∞)
 
@@ -191,7 +192,7 @@ Next-Key Locks会给索引和索引之间的间隙加锁。因为用到了Gap lo
 
 ### Insert Intention Locks
 
-为了提升插入性能而设计的一种特殊类型Gap lock，多个事务即使是往同一个间隙插入数据，比如下面的sql可以同时往(20,22]这个间隙插入数据。
+为了提升插入性能而设计的一种特殊类型Gap lock，多个事务可以往同一个间隙插入数据，比如下面的sql可以同时往(20,22]这个间隙插入数据。
 
 | Transaction 1                                      | Transaction 2                                     |
 | -------------------------------------------------- | ------------------------------------------------- |
