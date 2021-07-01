@@ -19,6 +19,16 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   KEY `idx_age` (`age`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+
+#插入基础数据
+INSERT INTO `user` (`id`, `name`, `age`, `phone`)
+VALUES
+	(1, '张三', 18, '13800138000'),
+	(2, '李四', 20, '13800138001'),
+	(3, '王五', 22, '13800138002'),
+	(4, '赵六', 26, '13800138003'),
+	(5, '孙七', 30, '13800138004');
+
 ```
 
 为了方便讲解，创建一张user表，设置age的字段为普通索引，并填充以下数据。本文所有的sql语句均基于这张表。
