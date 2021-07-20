@@ -136,7 +136,7 @@ show engine innodb status;
 
 #### 什么是间隙
 
-间隙就是是指索引两两之间的一个左开右开区间，在user表中，存在一下间隙。
+间隙就是是指索引两两之间的一个左开右开区间，在user表中，存在以下的间隙。
 
 > (-∞,18), (18,20), (20,22), (22,26), (26,30), (30,+∞)
 
@@ -198,7 +198,13 @@ Next-Key Locks实际上就是Gap lock和Record Lock的组合。Gap lock中的索
 
 > (-∞,18], (18,20], (20,22], (22,26], (26,30], (30,+∞)
 
-Next-Key Locks会给索引和索引之间的间隙加锁。因为用到了Gap lock，这种锁自然而然也是只有在`REPEATABLE-READ`的隔离级别下才能用。
+Next-Key Locks同时给索引和索引之间的间隙加锁(即组合Record lock和Gap lock)，例如:
+
+```sql
+select * from user where age = 22 for update;
+```
+
+对于这条sql，锁定的范围变成了(18,22], (22,26)，即Next-Key lock会锁定索引前后的区间以及索引本身。同时，因为用到了Gap lock，这种锁自然而然也是只有在`REPEATABLE-READ`的隔离级别下才能用。
 
 ### Insert Intention Locks
 
