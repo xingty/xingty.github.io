@@ -11,7 +11,7 @@ tags: 操作系统
 
 ## 知识准备
 
-阅读本文之前，希望读者具备一下的知识，否则看了也是一脸懵。
+阅读本文之前，希望读者具备以下的知识，否则看了也是一脸懵。
 
 * 了解你所知语言中的基本I/O操作
 * User space & Kernel space 的概念
@@ -120,7 +120,7 @@ I/O Multiplexing优化了非阻塞I/O大量发起system call的问题。
 
 #### select
 
-上图的事例就是select，我们看一下select的函数定义
+上图的例子就是select，我们看一下select的函数定义
 
 ```c
 int select(

@@ -166,7 +166,7 @@ select * from user where age between 22 and 26 for update;
   SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;
   ```
 
-  ![~~replace/assets/images/innodb-locks/gaplock.jpg](https://bigbyto.gitee.io/assets/images/innodb-locks/gaplock.jpg)
+  ![~replace~/assets/images/innodb-locks/gaplock.jpg](https://bigbyto.gitee.io/assets/images/innodb-locks/gaplock.jpg)
 
 * 没有Gap locks
 
@@ -230,7 +230,7 @@ select * from user where age = 22 for update;
 select * from information_schema.INNODB_LOCKS
 ```
 
-![~~replace/assets/images/innodb-locks/insert-intention-lock.jpg](https://bigbyto.gitee.io/assets/images/innodb-locks/insert-intention-lock.jpg)
+![~replace~/assets/images/innodb-locks/insert-intention-lock.jpg](https://bigbyto.gitee.io/assets/images/innodb-locks/insert-intention-lock.jpg)
 
 上图可以看出两种类型都是X,GAP，即可证明插入时也是Gap lock。这里我们可以看出Insert Intention Locks之间互相兼容，不会发生互斥。不过会和其他的间隙锁发生互斥，当我们往表中插入数据，过程如下: 
 
