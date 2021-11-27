@@ -90,7 +90,7 @@ socks5顾名思义就是socks协议的第五个版本，作为socks4的一个延
 
 上面的步骤虽然变多，但本质不变，非常容易理解，简单整理为下图
 
-![~replace~/assets/images/socks5/client-socks5.png](https://bigbyto.gitee.io/assets/images/socks5/client-socks5.png)
+![~replace~/assets/images/socks5/client-socks5_f.jpg](https://bigbyto.gitee.io/assets/images/socks5/client-socks5_f.jpg)
 
 **图2.2**
 
@@ -262,8 +262,12 @@ socks5服务器收到请求后，解析内容。如果是UDP请求，服务器�
 
 读者可以点击[socks5.pcapng](/assets/files/socks5.pcapng)下载抓包数据，使用[wireshark](https://www.wireshark.org/)可以查看本文事例的抓包数据。
 
+## 4. 相关阅读
 
-## 4.参考资料
+* [理解socks5协议的工作过程和协议细节](https://wiyi.org/socks5-protocol-in-deep.html)
+
+
+## 5.参考资料
 
 [https://en.wikipedia.org/wiki/SOCKS](https://en.wikipedia.org/wiki/SOCKS)   
 [https://datatracker.ietf.org/doc/html/rfc1928](https://datatracker.ietf.org/doc/html/rfc1928)   
