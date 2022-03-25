@@ -82,7 +82,7 @@ socks5顾名思义就是socks协议的第五个版本，作为socks4的一个延
 
 4. socks5 relay阶段
 
-   scoks5收到浏览器请求后，解析请求内容，然后想目标服务器发起建立TCP连接的请求。
+   scoks5收到浏览器请求后，解析请求内容，然后向目标服务器建立TCP连接。
 
 5. 数据传输阶段
 
@@ -264,7 +264,7 @@ socks5服务器收到请求后，解析内容。如果是UDP请求，服务器�
 
 ## 4. 相关阅读
 
-* [理解socks5协议的工作过程和协议细节](https://wiyi.org/socks5-protocol-in-deep.html)
+* [手把手使用Java实现一个Socks5代理](https://wiyi.org/socks5-implementation.html)
 
 
 ## 5.参考资料
