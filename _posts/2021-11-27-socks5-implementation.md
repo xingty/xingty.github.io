@@ -7,7 +7,7 @@ tags: socks5
 
 ## 1. 前言
 
-[上一篇文章](https://wiyi.org/socks5-protocol-in-deep.html)介绍了socks5协议的工作过程和协议的细节，通过上一篇文章我们可以认识到socks5协议主要有3个阶段，分别为: 协商、请求，Relay。本文将手把手使用Java语言实现一个简单的socks5代理
+[上一篇文章](https://wiyi.org/socks5-protocol-in-deep.html)介绍了socks5协议的工作过程和协议的细节，通过上一篇文章我们可以认识到socks5协议主要有3个阶段，分别为: 协商、请求，转发(Relay)。本文将手把手使用Java语言实现一个简单的socks5代理
 
 特别提醒: 本文目的仅作为加深socks5协议理解，其中的代码并不是严谨的代码，也没考虑其他的情况。在实际的开发过程中，需要考虑更多的意外情况。
 

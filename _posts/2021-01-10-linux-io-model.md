@@ -230,7 +230,7 @@ int epoll_wait(int epfd, struct epoll_event *events,int maxevents, int timeout);
 
 epoll是一种性能很高的同步I/O方案。现在linux中的高性能网络框架(tomcat、netty等)都有epoll的实现。缺点是只有linux支持epoll，BSD内核的kqueue类似于epoll。
 
-### Singal-Driven I/O
+### Signal-Driven I/O
 
 ![~replace~/assets/images/io-model/sio.png](https://bigbyto.gitee.io//assets/images/io-model/sio.png)
 

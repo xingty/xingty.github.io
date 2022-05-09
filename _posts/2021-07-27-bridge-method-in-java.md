@@ -87,7 +87,7 @@ org.wiyi.java9.generic.Animal getAnimal(); //1.方法名为Animal
             0       8     0  this   Lorg/wiyi/java9/generic/Animal;
 ```
 
-从上面的字节码可以看出，Dog的`getAnimal()`方法和Animal的`getAnimal`方法的descriptor不同，因此，在JVM的层面上，它们是**完全没有任何关系的两个方法**，不能构成Override;因为方法重名参数一致，同时也不构成Overload，因此编译器会报错。
+从字节码可以看出，Dog的`getAnimal()`方法和Animal的`getAnimal`方法的descriptor不同。因此，在JVM的层面上，它们是**完全没有任何关系的两个方法**，不能构成Override;因为方法重名参数一致，同时也不构成Overload，因此编译器会报错。
 
 那么为什么高版本的Java编译器不会报错呢？因为JDK 1.5以上的版本支持了方法返回值的协变，编译源码时会生成一个Bridge Method实现Override。我们查看Dog类完整的字节码，会发现有两个getAnimal方法。
 
