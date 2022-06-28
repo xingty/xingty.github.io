@@ -110,7 +110,7 @@ Non-blocking I/O的优势在于，**进程发起I/O操作时，不会因为数�
 
 ### I/O Multiplexing
 
-I/O Multiplexing优化了非阻塞I/O大量发起system call的问题。
+I/O Multiplexing又叫IO多路复用，这是借用了集成电路多路复用中的概念。它优化了非阻塞I/O大量发起system call的问题。
 
 上面介绍的I/O模型都是直接发起I/O操作，而I/O Multiplexing首先向kernel发起system call，传入file descriptor和感兴趣的事件(readable、writable等)让kernel监测，当其中一个或多个fd数据就绪，就会返回结果。程序再发起真正的I/O操作`recvfrom`读取数据。
 
@@ -277,7 +277,7 @@ struct aiocb {
 
 不管是select、poll、epoll都会导致进程阻塞。发起真正的IO操作时(比如recvfrom)，进程也会阻塞。
 
-I/O Multiplexing优点在于一次性可以监控大量的file descriptors。这就是所谓的"多路复用"(我觉得这个是很坑爹的翻译，不知道哪里存在复用了呢?)。
+I/O Multiplexing优点在于一次性可以监控大量的file descriptors。
 
 ### 同步I/O和异步I/O
 
