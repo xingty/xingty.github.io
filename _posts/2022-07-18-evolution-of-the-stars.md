@@ -1,6 +1,6 @@
 ---
 title: '恒星的演变过程'
-key: eth-eip55
+key: evolution-of-the-stars
 permalink: evolution-of-the-stars.html
 tags: water
 ---
