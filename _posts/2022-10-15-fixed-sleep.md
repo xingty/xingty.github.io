@@ -1,7 +1,7 @@
 ---
-title: '黑苹果解决Monterey蓝牙睡眠后不工作问题'
-key: fixed-sleep-using-sleepwatcher
-permalink: fixed-sleep-using-sleepwatcher.html
+title: '解决黑苹果Monterey蓝牙睡眠后不工作问题'
+key: fixed-sleep
+permalink: fixed-sleep.html
 tags: hackintosh
 ---
 
