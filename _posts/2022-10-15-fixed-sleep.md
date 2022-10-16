@@ -7,7 +7,7 @@ tags: hackintosh
 
 自Monterey(macOS 12.x)以来，博通BCM94360的网卡蓝牙模块可能会出现问题，具体表现为睡眠唤醒后，蓝牙会出现睡死的情况，即需要进入系统把蓝牙关了重新打开才能正常工作。
 
-自苹果切换到Apple silicon后，貌似Opencore现在对hackintosh也没那么上心了，蓝牙问题已经挺久。现在曲线救国的办法是在睡眠之前把蓝牙关闭，睡醒后再打开，这样会省事很多。我们当然不会手动去做这个事，mac下刚好有个app叫sleepwatcher，可以监控睡眠和唤醒。
+苹果切换到Apple silicon后，貌似Opencore现在对Hackintosh也没那么上心了，蓝牙问题已经挺久。现在曲线救国的办法是在睡眠之前把蓝牙关闭，睡醒后再打开，这样会省事很多。我们当然不会手动去做这个事，mac下刚好有个app叫sleepwatcher，可以监控睡眠和唤醒。
 
 #### 准备工作
 
