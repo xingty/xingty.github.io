@@ -7,7 +7,7 @@ tags: 分布式系统 CPU
 
 最近研究分布式系统的一致性，其中顺序一致性的来源就是，Lamport大神的这篇文章，因为原始的PDF字体清晰度不好，我弄成了文字版的。实际上在CPU这种微观系统中实现顺序一致性会很浪费性能，作者在最后也提到了更小粒度的顺序一致，比如Memory module级别降低到内存单元(Memory cell)，对于其他的operations依然是out of order。
 
-有兴趣的可以下载原文看: [How-to-make](https://lamport.azurewebsites.net/pubs/lamport-how-to-make.pdf)，失效了可以去网上找，资源太多了。
+有兴趣的可以下载原文看: [点击查看原文](https://www.microsoft.com/en-us/research/uploads/prod/2016/12/How-to-Make-a-Multiprocessor-Computer-That-Correctly-Executes-Multiprocess-Programs.pdf)。
 
 > **Abstract--Many large sequential computers execute operations in a different order than is specified by the program. A correct execution is achieved if the results produced are the same as would be produced by executing the program steps in order. For a multiprocessor computer, such a correct execution by each processor does not guarantee the correct execution of the entire program. Additional conditions are given which do guarantee that a computer correctly executes multiprocess programs.**
 
