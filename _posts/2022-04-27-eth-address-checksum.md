@@ -28,7 +28,7 @@ tags: blockchain
 
 先把账户地址经过digist再转为hex string，然后遍历用户原本的地址，如果hex string和原地址对应位置的字符是一个字母时，把原地址的字符转为大写字符，否则是一个小些字符。
 
-该算法最终被采纳为以太坊的标准，EIP-55。EIP-55的实现原理实际上非常简单，代码甚至都不到10行，非常简洁。下面是EIP55的JS实现，感受一下极致简洁的代码带来的美感。
+该算法最终被采纳为以太坊的标准，EIP-55。它的实现原理实际上非常简单，代码甚至都不到10行，非常简洁。下面是EIP55的JS实现。
 
 ```javascript
 const createKeccakHash = require('keccak')
