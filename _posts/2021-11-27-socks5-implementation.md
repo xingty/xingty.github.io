@@ -313,17 +313,39 @@ private void waitingRequest(Socket socket) throws IOException{
 }
 
 private RemoteAddr getRemoteAddrInfo(byte[] bytes,int len) {
-  byte[] data = new byte[len -6];
-  System.arraycopy(bytes,4,data,0,data.length);
-  String addr = new String(data);
+    byte atype = bytes[3];
+    String addr;
+    try {
+        if (atype == ATYPE_IPv4) {
+            byte[] ipv4 = new byte[4];
+            System.arraycopy(bytes,4,ipv4,0,ipv4.length);
+            addr = Inet4Address.getByAddress(ipv4).getHostAddress();
+        }
+        else if (atype == ATYPE_IPv6) {
+            byte[] ipv6 = new byte[16];
+            System.arraycopy(bytes,4,ipv6,0,ipv6.length);
+            addr = Inet6Address.getByAddress(ipv6).getHostAddress();
+        }
+        else if (atype == ATYPE_DOMAINNAME) {
+            int domainLen = bytes[4];
+            byte[] domain = new byte[domainLen];
+            System.arraycopy(bytes,5,domain,0,domain.length);
+            addr = new String(domain);
+        }
+        else {
+            throw new RuntimeException("Unknown address type: " + atype);
+        }
+    } catch (UnknownHostException e) {
+        throw new RuntimeException(e);
+    }
 
-  RemoteAddr info = new RemoteAddr();
-  info.addr = addr.trim();
+    RemoteAddr info = new RemoteAddr();
+    info.addr = addr.trim();
 
-  ByteBuffer buffer = ByteBuffer.wrap(new byte[]{bytes[len-2],bytes[len-1]});
-  info.port = buffer.asCharBuffer().get();
+    ByteBuffer buffer = ByteBuffer.wrap(new byte[]{bytes[len-2],bytes[len-1]});
+    info.port = buffer.asCharBuffer().get();
 
-  return info;
+    return info;
 }
 ```
 
