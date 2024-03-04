@@ -213,7 +213,19 @@ STATUS字段如果为`0x00`表示认证成功，其他的值为认证失败。�
 * DST.ADDR  一个可变长度的值
 * DST.PORT 目标端口，固定2个字节
 
-上面的值中，DST.ADDR是一个变长的数据，它的数据长度根据ATYP的类型决定。我们可以通过掐头去尾解析出这部分数据。
+上面的值中，DST.ADDR是一个变长的数据，它的数据长度根据ATYP的类型决定。~~我们可以通过掐头去尾解析出这部分数据。~~分为下面3种情况:
+
+* X'01'
+
+  一个4字节的ipv4地址
+
+* X'03'
+
+  一个可变长度的域名，这种情况下`DST.ADDR`的第一个字节表示域名长度，剩下部分是域名内容。
+
+* X'04'
+
+  一个16字节的ipv6地址
 
 ![~replace~/assets/images/socks5/socks5_05_req_01.jpg](https://bigbyto.gitee.io/assets/images/socks5/socks5_05_req_01.jpg)
 
