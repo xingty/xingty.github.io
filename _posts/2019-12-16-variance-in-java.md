@@ -5,6 +5,8 @@ permalink: variance-in-java.html
 tags: Java OOP Generic
 ---
 
+**注意: 这篇文章几年前写的，回头看内容存在很多问题，对这些概念解释的也很不清晰，不建议观看，后续可能会更新文章内容，或者重新发一篇新的。这篇留着作为曾经的记忆**
+
 ### Subtyping
 
 要想了解变异先要理解Subtyping的概念。Subtyping是面向对象里"类型多态(Type Polymorphism)"的其中一种表现形式，它主要描述"is a"这样的关系。比如`S`是`T`的子类型，那么他们的关系可以表达为 **S is a subtype of T**。维基百科有一段对Subtyping的描述。
