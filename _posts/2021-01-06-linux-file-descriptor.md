@@ -25,7 +25,7 @@ fis.read(buf);
 
 上面代码的流程如下图所示
 
-![/assets/images/fd/us_ks.png](https://bigbyto.gitee.io/assets/images/fd/us_ks.png)
+![/assets/images/fd/us_ks.png](/assets/images/fd/us_ks.png)
 
 <!--more-->
 
