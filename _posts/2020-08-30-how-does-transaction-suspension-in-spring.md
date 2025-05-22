@@ -65,14 +65,14 @@ public abstract class TransactionSynchronizationManager {
 
 事务挂起主要的代码在`AbstractPlatformTransactionManager#handleExistingTransaction`，下图可以看出在当前事务已经存在的情况下，部分`Propagation`会导致当前事务被挂起(suspend)。
 
-![/assets/images/spring-tx/spring-tx-propagation.png](https://bigbyto.gitee.io/assets/images/spring-tx/spring-tx-propagation.png)
+![/assets/images/spring-tx/spring-tx-propagation.png](https://wiyi.org/assets/images/spring-tx/spring-tx-propagation.png)
 
 当前事务挂起后会继续执行，直到执行完成再执行resume
 
 `AbstractPlatformTransactionManager#cleanupAfterCompletion`
 
-![/assets/images/spring-tx/resume-suspend-resource-after-commit.png](https://bigbyto.gitee.io/assets/images/spring-tx/resume-suspend-resource-after-commit.png)
+![/assets/images/spring-tx/resume-suspend-resource-after-commit.png](https://wiyi.org/assets/images/spring-tx/resume-suspend-resource-after-commit.png)
 
 `cleanupAfterCompletion`这方法会在commit和rollback后执行。
 
-![/assets/images/spring-tx/resume-invocation.png](https://bigbyto.gitee.io/assets/images/spring-tx/resume-invocation.png)
+![/assets/images/spring-tx/resume-invocation.png](https://wiyi.org/assets/images/spring-tx/resume-invocation.png)

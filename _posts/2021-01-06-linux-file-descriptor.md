@@ -37,7 +37,7 @@ fis.read(buf);
 
 和fd相关的一共有3张表，分别是file descriptor、file table、inode table，如下图所示。
 
-![~replace~https://user-images.githubusercontent.com/3600657/103748658-67d36100-503f-11eb-960b-e77683e751f7.png](https://bigbyto.gitee.io/assets/images/fd/file-descriptor.jpg)
+![~replace~https://user-images.githubusercontent.com/3600657/103748658-67d36100-503f-11eb-960b-e77683e751f7.png](https://wiyi.org/assets/images/fd/file-descriptor.jpg)
 
 * file descriptors
 
@@ -93,7 +93,7 @@ linux系统可以通过`/proc/pid/fd`文件夹查看进程的fd，比如我的re
 ls -l /proc/96104/fd
 ```
 
-![/assets/images/fd/linux_fd.png](https://bigbyto.gitee.io/assets/images/fd/linux_fd.png)
+![/assets/images/fd/linux_fd.png](https://wiyi.org/assets/images/fd/linux_fd.png)
 
 上图中的数字即fd。
 
@@ -103,7 +103,7 @@ ls -l /proc/96104/fd
 lsof -p pid
 ```
 
-![/assets/images/fd/mac_fd.png](https://bigbyto.gitee.io/assets/images/fd/mac_fd.png)
+![/assets/images/fd/mac_fd.png](https://wiyi.org/assets/images/fd/mac_fd.png)
 
 
 ## 操作file descriptors
@@ -177,13 +177,13 @@ public class FDTester {
 }
 ```
 
-![/assets/images/fd/fd_stdin.png](https://bigbyto.gitee.io/assets/images/fd/fd_stdin.png)
+![/assets/images/fd/fd_stdin.png](https://wiyi.org/assets/images/fd/fd_stdin.png)
 
-![/assets/images/fd/fd_stdout.png](https://bigbyto.gitee.io/assets/images/fd/fd_stdout.png)
+![/assets/images/fd/fd_stdout.png](https://wiyi.org/assets/images/fd/fd_stdout.png)
 
-![/assets/images/fd/fd_stderr.png](https://bigbyto.gitee.io/assets/images/fd/fd_stderr.png)
+![/assets/images/fd/fd_stderr.png](https://wiyi.org/assets/images/fd/fd_stderr.png)
 
-![/assets/images/fd/fd_java_process.png](https://bigbyto.gitee.io/assets/images/fd/fd_java_process.png)
+![/assets/images/fd/fd_java_process.png](https://wiyi.org/assets/images/fd/fd_java_process.png)
 
 
 ## 参考资料

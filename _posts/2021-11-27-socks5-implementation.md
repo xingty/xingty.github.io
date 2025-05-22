@@ -13,7 +13,7 @@ tags: socks5
 
 上一篇文章中有一张时序图展示了socks5的大概工作过程，本文将使用Java把这些过程一一实现。
 
-![~replace~/assets/images/socks5/client-socks5_f.jpg](https://bigbyto.gitee.io/assets/images/socks5/client-socks5_f.jpg)
+![~replace~/assets/images/socks5/client-socks5_f.jpg](https://wiyi.org/assets/images/socks5/client-socks5_f.jpg)
 
 <!--more-->
 ## 2. 准备
