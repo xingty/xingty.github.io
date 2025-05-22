@@ -20,7 +20,7 @@ tags: socks5
 
 大概的意思是: socks是一种互联网协议，它通过一个代理服务器在客户端和服务端之间交换网络数据。简单来说，它就是一种代理协议，扮演一个中间人的角色，在客户端和目标主机之间转发数据。
 
-![~replace~/assets/images/socks5/socks5_01.jpeg](https://bigbyto.gitee.io/assets/images/socks5/socks5_01.jpeg)
+![~replace~/assets/images/socks5/socks5_01.jpeg](https://user-images.githubusercontent.com/3600657/169195754-0ed9658d-717e-4edd-915f-e2f0b7596818.jpeg)
 
 socks协议位于OSI模型中的第五层，即会话层(Session Layer)。
 
@@ -61,7 +61,7 @@ socks5顾名思义就是socks协议的第五个版本，作为socks4的一个延
 
 3. 服务器响应浏览器一段HTML内容，浏览器收到后对页面进行渲染
 
-![~replace~/assets/images/socks5/client-server.png](https://bigbyto.gitee.io/assets/images/socks5/client-server.png)
+![https://user-images.githubusercontent.com/3600657/169195743-8bae7f81-a217-4f43-bb8b-64480ed6fe5b.png](https://user-images.githubusercontent.com/3600657/169195743-8bae7f81-a217-4f43-bb8b-64480ed6fe5b.png)
 
 **图2.1**
 
@@ -90,7 +90,7 @@ socks5顾名思义就是socks协议的第五个版本，作为socks4的一个延
 
 上面的步骤虽然变多，但本质不变，非常容易理解，简单整理为下图
 
-![~replace~/assets/images/socks5/client-socks5_f.jpg](https://bigbyto.gitee.io/assets/images/socks5/client-socks5_f.jpg)
+![](https://wiyi.org/assets/images/socks5/client-socks5_f.jpg)
 
 **图2.2**
 
@@ -130,7 +130,7 @@ METHODS: 对应NMETHODS，NMETHODS的值为多少，METHODS就有多少个字节
 * X'80' to X'FE' RESERVED FOR PRIVATE METHODS
 * X'FF' NO ACCEPTABLE METHODS
 
-![~replace~/assets/images/socks5/socks5_ne_01.jpg](https://bigbyto.gitee.io/assets/images/socks5/socks5_ne_01.jpg)
+![~replace~/assets/images/socks5/socks5_ne_01.jpg](https://wiyi.org/assets/images/socks5/socks5_ne_01.jpg)
 
 socks5服务器需要选中一个METHOD返回给客户端，格式如下:
 
@@ -144,7 +144,7 @@ socks5服务器需要选中一个METHOD返回给客户端，格式如下:
 
 当客户端收到`0x00`时，会跳过认证阶段直接进入请求阶段; 当收到`0xFF`时，直接断开连接。其他的值进入到对应的认证阶段。
 
-![~replace~/assets/images/socks5/socks5_ne_02.jpg](https://bigbyto.gitee.io/assets/images/socks5/socks5_ne_02.jpg)
+![~replace~/assets/images/socks5/socks5_ne_02.jpg](https://wiyi.org/assets/images/socks5/socks5_ne_02.jpg)
 
 
 **2.5.1.2 认证阶段(也叫子协商)**
@@ -171,7 +171,7 @@ PLEN: 密码长度
 
 PASSWD: 密码对应的数据
 
-![~replace~/assets/images/socks5/socks5_ne_03_auth.jpg](https://bigbyto.gitee.io/assets/images/socks5/socks5_ne_03_auth.jpg)
+![~replace~/assets/images/socks5/socks5_ne_03_auth.jpg](https://wiyi.org/assets/images/socks5/socks5_ne_03_auth.jpg)
 
 socks5服务器收到客户端的认证请求后，解析内容，验证信息是否合法，然后给客户端响应结果。响应格式如下:
 
@@ -185,7 +185,7 @@ socks5服务器收到客户端的认证请求后，解析内容，验证信息�
 
 STATUS字段如果为`0x00`表示认证成功，其他的值为认证失败。当客户端收到认证失败的响应后，它将会断开连接。
 
-![~replace~/assets/images/socks5/socks5_ne_04_auth.jpg](https://bigbyto.gitee.io/assets/images/socks5/socks5_ne_04_auth.jpg)
+![~replace~/assets/images/socks5/socks5_ne_04_auth.jpg](https://wiyi.org/assets/images/socks5/socks5_ne_04_auth.jpg)
 
 
 #### 2.5.2 请求阶段
@@ -227,7 +227,7 @@ STATUS字段如果为`0x00`表示认证成功，其他的值为认证失败。�
 
   一个16字节的ipv6地址
 
-![~replace~/assets/images/socks5/socks5_05_req_01.jpg](https://bigbyto.gitee.io/assets/images/socks5/socks5_05_req_01.jpg)
+![~replace~/assets/images/socks5/socks5_05_req_01.jpg](https://wiyi.org/assets/images/socks5/socks5_05_req_01.jpg)
 
 socks5服务器收到客户端的请求后，需要返回一个响应，结构如下
 
