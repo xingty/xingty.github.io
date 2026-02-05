@@ -403,7 +403,7 @@ end
 
 经过上面几个步骤，goods db中所有的sku状态已经正常，再把这部分状态强制刷新到redis中，成功后，redis就拥有了最新且正确的snapshot。
 
-当完成所有步骤后，coordinator把redis的状态设置为ready(is_stale=0或addr:master更新为当前master)。此时业务端的熔断也会结束。
+当完成所有步骤后，coordinator把redis的状态设置为ready(is_stale=0或master:epoch更新为当前epoch)。此时业务端的熔断也会结束。
 
 
 
